@@ -1,1 +1,23 @@
-<p>home works!</p>
+<div class="main">
+        <div class="slide">
+            <ng-container>
+                <div class="tilte">
+                    <h2>Explore</h2>
+                    <p>What are you gonna watch today? </p>
+                </div>
+                <!-- <nz-carousel nzAutoPlay>
+                    <div nz-carousel-content *ngFor="let item of data">
+                        <img src="https://image.tmdb.org/t/p/original{{item['backdrop_path']}}" style="width: 50%;">                      
+                    </div>
+                </nz-carousel> -->
+            </ng-container>
+            
+        </div>
+        <div class="newRelease">
+           <ng-container *ngFor="let item of data">
+            <img src="https://image.tmdb.org/t/p/original{{item['backdrop_path']}}" style="width: 50%;">                      
+
+           </ng-container>
+        </div>
+        <div class="upComing"></div>
+</div>

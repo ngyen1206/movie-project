@@ -1,17 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Injectable } from '@angular/core';
 import axios from 'axios';
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+@Injectable({
+  providedIn: 'root' // Đảm bảo service có sẵn ở cấp ứng dụng (root level)
 })
-export class HomeComponent  implements OnInit {
-  public id: string = '';
-  public backdrop_path: string = '';
+export class DataService {
   public data = [];
-
-  public async ngOnInit() {
+  public getData() {
     const options = {
       method: 'GET',
       url: 'https://api.themoviedb.org/3/discover/movie',
@@ -21,18 +15,17 @@ export class HomeComponent  implements OnInit {
       }
     };
 
-    this.data = await axios
+    axios
       .request(options)
       .then(function (response: { data: any; }) { 
         const id = response.data.results.id;     
-          // console.log(response.data.results);
-          // console.log(response.data.results.backdrop_path);          
+          console.log(response.data.results);
+          console.log(response.data.results.backdrop_path);          
         return response.data.results;
       })
       .catch(function (error: any) {
         console.error(error);
       });
       console.log(this.data);
-  
   }
 }

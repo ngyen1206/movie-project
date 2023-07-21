@@ -1,16 +1,17 @@
-<nz-layout>
-    <nz-header  style="display: flex;">
-       <ng-container>
+<nz-layout style="background-color: #192026;">
+    <nz-header style="background-color: #192026;">
+       <div class="container">
         <div class="logo"><h3><span>Nino</span><span class="film">Film</span></h3></div>   
-        <ul style="color: red;display: flex; list-style: none;">
+        <ul>
             <li>Home</li>
             <li>Movie</li>
             <li>TV Show</li>
         </ul>
-        <input type="text" class="form-control" id="name"
-       required
-       name="name">
-       </ng-container>
+        <div class="search-hero">
+            <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" Search ">
+            
+          </div>
+        </div>
     </nz-header>
     <nz-content>
         <router-outlet></router-outlet>

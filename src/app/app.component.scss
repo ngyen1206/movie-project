@@ -1,3 +1,8 @@
+.container{
+  margin: 0 auto;
+  display: flex;
+  padding: 15px;
+}
 nz-footer {
   background-color: #192026;
   display: grid;
@@ -15,6 +20,27 @@ p,span,ul {
 .film{
   color: #FF0000;
 }
+ul{
+  display: flex;
+  list-style: none;
+
+}
 li{
   padding: 0px 10px;
 }
+
+//vbie
+.search-hero {
+  max-width: 500px;
+  padding-bottom: 50px;
+  margin:auto;
+}
+.search-hero {
+  input {
+    height: 30px;
+    border-radius: 10px;
+    background: #374151;
+    border: unset;
+  }
+}
+
