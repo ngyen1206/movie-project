@@ -1,8 +1,30 @@
-[nz-carousel-content] {
-    text-align: center;
-    height: 160px;
-    line-height: 160px;
-    background: #364d79;
-    color: #fff;
-    overflow: hidden;
-  }
+.main {
+  background-color: #192026;
+  color: #868686;
+}
+h1,h3{
+  color: aliceblue;
+}
+.container{
+  margin: 0 50px;
+  padding: 15px;
+}
+nz-carousel {
+  text-align: center;
+  height: 400px;
+  width: auto;
+  line-height: 160px;
+  overflow: hidden;
+}
+
+.release-item, .coming-item{
+  display: flex;
+}
+.card-item {
+  width: 50%;
+  margin: 10px 30px 10px 0px;
+}
+.title{
+  margin: 10px;
+}
+

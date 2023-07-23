@@ -1,23 +1,46 @@
 <div class="main">
+    <div class="container">
         <div class="slide">
-            <ng-container>
-                <div class="tilte">
-                    <h2>Explore</h2>
-                    <p>What are you gonna watch today? </p>
+            <div class="tilte">
+                <h1>Explore</h1>
+                <p>What are you gonna watch today? </p>
+            </div>
+            <nz-carousel nzAutoPlay>
+                <div nz-carousel-content *ngFor="let index of array">
+                    <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/xGIeqQunSj5dxGZVKzNNr9W4vps.jpg"
+                        width="100%" height="100%">
                 </div>
-                <!-- <nz-carousel nzAutoPlay>
-                    <div nz-carousel-content *ngFor="let item of data">
-                        <img src="https://image.tmdb.org/t/p/original{{item['backdrop_path']}}" style="width: 50%;">                      
-                    </div>
-                </nz-carousel> -->
-            </ng-container>
-            
+            </nz-carousel>
         </div>
         <div class="newRelease">
-           <ng-container *ngFor="let item of data">
-            <img src="https://image.tmdb.org/t/p/original{{item['backdrop_path']}}" style="width: 50%;">                      
-
-           </ng-container>
+            <h1>New Release</h1>
+            <div class="release-item">
+                <ng-container *ngFor="let item of data;">
+                    <!-- <ng-container *ngIf="data.length <6"> -->
+                        <div class="card-item">
+                            <img src="https://image.tmdb.org/t/p/w200{{item['poster_path']}}">
+                            <div class="title">
+                                <h3>{{item['original_title']}}</h3>
+                                <div class="date">{{item['release_date']}}</div>
+                            </div>
+                        </div>
+                    <!-- </ng-container> -->
+                </ng-container>
+            </div>
         </div>
-        <div class="upComing"></div>
+        <div class="upComing">
+            <h1>New Release</h1>
+            <div class="coming-item">
+                <ng-container *ngFor="let item of data">
+                    <div class="card-item">
+                        <img src="https://image.tmdb.org/t/p/w200{{item['poster_path']}}">
+                        <div class="title">
+                            <h3>{{item['original_title']}}</h3>
+                            <div class="date">{{item['release_date']}}</div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
 </div>

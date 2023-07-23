@@ -1,25 +1,30 @@
-<nz-layout style="background-color: #192026;">
-    <nz-header style="background-color: #192026;">
-       <div class="container">
-        <div class="logo"><h3><span>Nino</span><span class="film">Film</span></h3></div>   
-        <ul>
-            <li>Home</li>
-            <li>Movie</li>
-            <li>TV Show</li>
-        </ul>
-        <div class="search-hero">
-            <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" Search ">
-            
-          </div>
+<nz-layout>
+    <header>
+        <div class="container">
+            <div class="left">
+                <div class="logo">
+                    <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="">
+                </div>
+                <ul>
+                    <li><p>Home</p></li>
+                    <li><p>Movie</p></li>
+                    <li><p>TV Show</p></li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="search-hero">
+                    <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" Search">
+                </div>
+            </div>
         </div>
-    </nz-header>
+    </header>
     <nz-content>
         <router-outlet></router-outlet>
     </nz-content>
     <nz-footer>
         <ng-container>
-            <p>2022. Personal Project</p>
-            <div class="logo"><h3><span>Nino</span><span class="film">Film</span></h3></div>   
-        </ng-container>           
+            <p>The Movie Project 2023</p>
+            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" width="100px">          
+        </ng-container>
     </nz-footer>
 </nz-layout>

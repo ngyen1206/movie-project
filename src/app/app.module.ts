@@ -13,6 +13,7 @@ import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { HomeModule } from './pages/home/home.module';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 registerLocaleData(en);
 
@@ -29,7 +30,8 @@ registerLocaleData(en);
     IconsProviderModule,
     NzLayoutModule,
     HomeModule,
-    NzGridModule
+    NzGridModule,
+    NzIconModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

@@ -6,9 +6,10 @@ import axios from 'axios';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent  implements OnInit {
+export class HomeComponent implements OnInit {
   public id: string = '';
   public backdrop_path: string = '';
+  public array = [1, 2, 3, 4, 5, 6];
   public data = [];
 
   public async ngOnInit() {
@@ -23,16 +24,16 @@ export class HomeComponent  implements OnInit {
 
     this.data = await axios
       .request(options)
-      .then(function (response: { data: any; }) { 
-        const id = response.data.results.id;     
-          // console.log(response.data.results);
-          // console.log(response.data.results.backdrop_path);          
+      .then(function (response: { data: any; }) {
+        const id = response.data.results.id;
+        // console.log(response.data.results);
+        // console.log(response.data.results.backdrop_path);          
         return response.data.results;
       })
       .catch(function (error: any) {
         console.error(error);
       });
-      console.log(this.data);
-  
+    console.log(this.data);
+
   }
 }
