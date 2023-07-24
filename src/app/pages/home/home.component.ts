@@ -14,14 +14,14 @@ export class HomeComponent implements OnInit {
 
   customOptions: OwlOptions = {
     items: 6,
-    autoWidth:true,
+    autoWidth: true,
     startPosition: 0,
     mouseDrag: true,
     touchDrag: false,
     pullDrag: true,
-    dots: false    
-  }  
- 
+    dots: false
+  }
+
   public async ngOnInit() {
     const options = {
       method: 'GET',

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+$space-amounts: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 150, 200, 250, 300;
+$sides: top, bottom, left, right, all, vertical, horizontal, auto, topAuto, bottomAuto;
+
+// ._spacing ($side) when (@side = all) {
+//     each($space-amounts, {
+//         ._m-@{value} {
+//             margin: unit(@value, px);
+//         }
+//         ._p-@{value} {
+//             padding: unit(@value, px);
+//         }
+//     })
+// }
+
+// @each $element in $space-amounts {
+//     @if not meta.call($condition, $element) {
+//       $new-list: list.append($new-list, $element, $separator: $separator);
+//     }
+//   }
