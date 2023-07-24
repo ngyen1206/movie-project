@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import axios from 'axios';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,9 +9,19 @@ import axios from 'axios';
 export class HomeComponent implements OnInit {
   public id: string = '';
   public backdrop_path: string = '';
-  public array = [1, 2, 3, 4, 5, 6];
   public data = [];
+  public array = [1, 2, 3, 4, 5, 6];
 
+  customOptions: OwlOptions = {
+    items: 6,
+    autoWidth:true,
+    startPosition: 0,
+    mouseDrag: true,
+    touchDrag: false,
+    pullDrag: true,
+    dots: false    
+  }  
+ 
   public async ngOnInit() {
     const options = {
       method: 'GET',

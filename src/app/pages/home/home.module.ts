@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    NzCarouselModule
+    NzCarouselModule,
+    CarouselModule
   ],
   exports: [
     HomeComponent

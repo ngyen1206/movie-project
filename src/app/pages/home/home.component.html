@@ -5,41 +5,49 @@
                 <h1>Explore</h1>
                 <p>What are you gonna watch today? </p>
             </div>
-            <nz-carousel nzAutoPlay>
-                <div nz-carousel-content *ngFor="let index of array">
-                    <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/xGIeqQunSj5dxGZVKzNNr9W4vps.jpg"
-                        width="100%" height="100%">
-                </div>
-            </nz-carousel>
+            <owl-carousel-o [options]="{items: 1,loop: true,autoplay: true}">
+                <ng-container *ngFor="let item of array">
+                    <ng-template carouselSlide>
+                        <img src="https://www.themoviedb.org/t/p/w533_and_h300_bestv2/xGIeqQunSj5dxGZVKzNNr9W4vps.jpg"
+                        width="100%" height="300px">
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>          
         </div>
         <div class="newRelease">
             <h1>New Release</h1>
             <div class="release-item">
-                <ng-container *ngFor="let item of data;">
-                    <!-- <ng-container *ngIf="data.length <6"> -->
-                        <div class="card-item">
-                            <img src="https://image.tmdb.org/t/p/w200{{item['poster_path']}}">
-                            <div class="title">
-                                <h3>{{item['original_title']}}</h3>
-                                <div class="date">{{item['release_date']}}</div>
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let item of data">
+                        <ng-template carouselSlide>
+                            <div class="card-item">
+                                <img src="https://image.tmdb.org/t/p/w200{{item['poster_path']}}">
+                                <div class="title">
+                                    <h3>{{item['original_title']}}</h3>
+                                    <div class="date">{{item['release_date']}}</div>
+                                </div>
                             </div>
-                        </div>
-                    <!-- </ng-container> -->
-                </ng-container>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
             </div>
         </div>
         <div class="upComing">
             <h1>New Release</h1>
             <div class="coming-item">
-                <ng-container *ngFor="let item of data">
-                    <div class="card-item">
-                        <img src="https://image.tmdb.org/t/p/w200{{item['poster_path']}}">
-                        <div class="title">
-                            <h3>{{item['original_title']}}</h3>
-                            <div class="date">{{item['release_date']}}</div>
-                        </div>
-                    </div>
-                </ng-container>
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let item of data">
+                        <ng-template carouselSlide>
+                            <div class="card-item">
+                                <img src="https://image.tmdb.org/t/p/w200{{item['poster_path']}}">
+                                <div class="title">
+                                    <h3>{{item['original_title']}}</h3>
+                                    <div class="date">{{item['release_date']}}</div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
             </div>
         </div>
     </div>

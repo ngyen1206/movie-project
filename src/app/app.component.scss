@@ -1,44 +1,47 @@
 header {
   background-color: #192026;
-  color: #868686;  
+  color: #868686;
   align-items: center;
   padding-top: 15px;
 }
+
 .container {
   margin: 0 50px;
   display: flex;
   padding: 15px;
   justify-content: space-between;
 }
+
 .left {
   display: flex;
   font-size: 1.2rem;
 }
-.logo{
-  img{
+
+.logo {
+  img {
     width: 150px;
   }
 }
+
 .search-hero {
   input {
     height: 30px;
     width: 300px;
     border-radius: 10px;
-    background: #374151;  
+    background: #374151;
     box-sizing: border-box;
-  border: 1px solid;
+    border: 1px solid;
+    padding: 10px;
   }
 }
-
-
-
 
 nz-footer {
   display: grid;
   place-items: center;
   background-color: #192026;
-  color: #868686; 
-} 
+  color: #868686;
+}
+
 p,
 span,
 ul {
@@ -55,4 +58,3 @@ ul {
 li {
   padding: 0px 10px;
 }
-
