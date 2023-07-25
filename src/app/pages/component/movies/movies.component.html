@@ -1,0 +1,22 @@
+
+<h1>{{title}}</h1>
+<div class="release-item">
+    <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let item of data">
+            <ng-template carouselSlide>
+                <div class="card-item _m-15">
+                    <div class="card-img">
+                        <img src="https://image.tmdb.org/t/p/w200{{item['poster_path']}}">
+                    <a class="detail _p-5" href="http://localhost:4200/detail">Details</a>
+                    </div>                              
+                    <div class="title">
+                        <a href="http://localhost:4200/detail">
+                            <h3>{{item['original_title']}}</h3>
+                        </a>
+                        <div class="date">{{item['release_date']}}</div>
+                    </div>
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</div>

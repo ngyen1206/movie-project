@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main-home _br-color">
     <div class="container">
         <div class="slide">
             <div class="tilte">
@@ -12,46 +12,13 @@
                         width="100%" height="400px" style="object-fit: cover;">
                     </ng-template>
                 </ng-container>
-            </owl-carousel-o>          
+            </owl-carousel-o>
         </div>
         <div class="newRelease">
-            <h1>New Release</h1>
-            <div class="release-item">
-                <owl-carousel-o [options]="customOptions">
-                    <ng-container *ngFor="let item of data">
-                        <ng-template carouselSlide>
-                            <div class="card-item m-15">
-                                <div class="card-img">
-                                    <img src="https://image.tmdb.org/t/p/w200{{item['poster_path']}}">
-                                <div class="detail">Details</div>
-                                </div>                              
-                                <div class="title">
-                                    <h3>{{item['original_title']}}</h3>
-                                    <div class="date">{{item['release_date']}}</div>
-                                </div>
-                            </div>
-                        </ng-template>
-                    </ng-container>
-                </owl-carousel-o>
-            </div>
+            <app-movies title="New Release" [data]=data [customOptions]=customOptions></app-movies>
         </div>
         <div class="upComing">
-            <h1>Up Coming</h1>
-            <div class="coming-item">
-                <owl-carousel-o [options]="customOptions">
-                    <ng-container *ngFor="let item of data">
-                        <ng-template carouselSlide>
-                            <div class="card-item">
-                                <img src="https://image.tmdb.org/t/p/w200{{item['poster_path']}}">
-                                <div class="title">
-                                    <h3>{{item['original_title']}}</h3>
-                                    <div class="date">{{item['release_date']}}</div>
-                                </div>
-                            </div>
-                        </ng-template>
-                    </ng-container>
-                </owl-carousel-o>
-            </div>
+            <app-movies title="Up Coming" [data]=data [customOptions]=customOptions></app-movies>
         </div>
     </div>
 </div>

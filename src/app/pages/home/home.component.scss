@@ -1,7 +1,4 @@
-.main {
-  background-color: #192026;
-  color: #868686;
-}
+
 
 h1,
 h3 {
@@ -28,10 +25,22 @@ nz-carousel {
 }
 
 .detail {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  background-color: cadetblue;
-  border: none;
+  display: none;
+
+}
+
+.card-img:hover {
+  opacity: 0.5;
+  .detail {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: #17b8db;
+    border: none;
+    color: aliceblue;
+    border-radius: 25px;
+    display: block;
+
+  }
 }
