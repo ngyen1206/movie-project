@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import axios from 'axios';
+
 @Component({
-  selector: 'app-movies',
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss']
 })
-export class MoviesComponent {
+export class CardComponent {
   @Input()
   public data = [];
 
@@ -16,7 +16,4 @@ export class MoviesComponent {
   @Input()
   customOptions: OwlOptions = {}
 
-  public async ngOnInit() {
-
-  }
 }

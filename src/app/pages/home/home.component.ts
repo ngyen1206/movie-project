@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
   ){
   }
   public async ngOnInit() {
-    this.data = await this.service.getListMove();
+    this.data = await this.service.getListMovie();
+    //console.log(this.data);
   }
 }

@@ -4,18 +4,20 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { MoviesModule } from '../component/movies/movies.module';
+import { CardComponent } from './components/card/card.component';
+import { CardModule } from './components/card/card.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     NzCarouselModule,
     CarouselModule,
-    MoviesModule
+    CardModule
   ],
   exports: [
     HomeComponent

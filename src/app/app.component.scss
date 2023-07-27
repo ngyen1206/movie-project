@@ -38,7 +38,7 @@ header {
 nz-footer {
   display: grid;
   place-items: center;
-  background-color: #192026;
+
   color: #868686;
 }
 
@@ -48,13 +48,11 @@ ul {
   color: #868683;
 }
 
-
-ul {
-  display: flex;
-  list-style: none;
-
-}
-
 li {
   padding: 0px 10px;
+}
+
+.list-group{
+  position: absolute;
+  border: 2px;
 }

@@ -7,8 +7,8 @@ import { DataService } from 'src/app/service/data.service';
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.scss']
 })
-export class MovieComponent  implements OnInit {
-  public tilte = ['Overview','Popularity','Vote Average'];
+export class MovieComponent implements OnInit {
+  public tilte = ['Overview', 'Popularity', 'Vote Average'];
 
   @Input()
   public movie: any = {};
@@ -16,13 +16,15 @@ export class MovieComponent  implements OnInit {
     private service: DataService,
     private router: ActivatedRoute,
   ) {
-    
-  }
 
+  }
+  showVideoMovie() {
+ 
+  }
   async ngOnInit(): Promise<void> {
     const id = this.router.snapshot.paramMap.get('id');
-    
-    if(id) {
+
+    if (id) {
       this.movie = await this.service.getMovie(id)
     };
   }

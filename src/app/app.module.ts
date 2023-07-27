@@ -11,7 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
-import { HomeModule } from './pages/home/home.module';
+
 
 registerLocaleData(en);
 
@@ -26,8 +26,7 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     IconsProviderModule,
-    NzLayoutModule,
-    HomeModule,
+    NzLayoutModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }

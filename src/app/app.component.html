@@ -1,30 +1,37 @@
 <nz-layout>
-    <header>
+    <header class="_br-color">
         <div class="container">
             <div class="left">
                 <div class="logo">
-                    <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="">
+                    <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+                        alt="">
                 </div>
-                <ul>
-                    <li><p>Home</p></li>
-                    <li><p>Movie</p></li>
-                    <li><p>TV Show</p></li>
+                <ul *ngFor="let item of menu">
+                    <li>
+                        <a href="">{{item}}</a>
+                    </li>
                 </ul>
             </div>
-            <div class="right">
+            <div class="right">               
                 <div class="search-hero">
-                    <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder=" Search">
-                </div>
+                    <input type="text" (input)="onInputChange($event)" placeholder="Enter your Search">
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let results of searchResults" (click)="showMovie()">
+                        <a [routerLink]="'/movie/' + results['id']"> {{results.original_title}}</a>                    
+                    </li>
+                  </ul>
             </div>
         </div>
     </header>
-    <nz-content>
+    <nz-content class="_br-color">
         <router-outlet></router-outlet>
     </nz-content>
-    <nz-footer>
+    <nz-footer class="_br-color">
         <ng-container>
             <p>The Movie Project 2023</p>
-            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" width="100px">          
+            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+                width="100px">
         </ng-container>
     </nz-footer>
 </nz-layout>
