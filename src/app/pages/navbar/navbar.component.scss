@@ -1,0 +1,33 @@
+.navbar {
+    background-color: #111111;
+
+}
+
+.container {
+    justify-content: space-between;
+    margin: 0 265px;
+}
+
+a {
+    color: #D4D4D4;
+    font-size: 20px;
+}
+
+li {
+    padding: 10px;
+}
+
+.d-flex {
+    border-radius: 25px;
+    background: #242424;
+
+    .me-2 {
+        background-color: #242424;
+    }
+    ._p-5{
+        background: #242424;
+        border-radius: 25px;
+        padding: 0px 5px;
+        border: 2px solid red;
+    }
+}
