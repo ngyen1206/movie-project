@@ -1,21 +1,45 @@
-<h1>{{title}}</h1>
-<div class="release-item">
-    <owl-carousel-o [options]="customOptions">
+<div class="container">
+    <h1>{{title}}</h1>
+    <div class="items _dis-f">
         <ng-container *ngFor="let item of data">
-            <ng-template carouselSlide>
-                <div class="card-item _m-15">
-                    <div class="card-img">
-                        <img src="https://image.tmdb.org/t/p/w200{{item['poster_path']}}">
-                    <a class="detail _p-5" [routerLink]="'/movie/' + item['id']">Details</a>
-                    </div>                              
-                    <div class="title">
-                        <a [routerLink]="'/movie/' + item['id']">
-                            <h3>{{item['original_title']}}</h3>
-                        </a>
-                        <div class="date"><p>{{item['release_date']}}</p></div>
-                    </div>
+            <div class="card-item">
+                <div class="card-img">
+                    <img src="https://image.tmdb.org/t/p/w300{{item['poster_path']}}">
+                    <a class="play-now _p-5" [routerLink]="'/movie/' + item['id']">
+                        Play Now
+                    </a>
                 </div>
-            </ng-template>
+                <div class="btn">
+                    <div class="dub">DUB</div>
+                    <div class="sub">SUB</div>
+                    <p>TV</p>
+                    <span nz-icon nzType="more" nzTheme="outline"></span>
+                </div>
+                <div class="title">
+                    <a [routerLink]="'/movie/' + item['id']">
+                        <h3>{{item['original_title']}}</h3>
+                    </a>
+                </div>
+            </div>
         </ng-container>
-    </owl-carousel-o>
+    </div>
 </div>
+<!-- <div class="card-item _m-15">
+        <div class="card-img">
+            <img src="https://image.tmdb.org/t/p/w200{{poster_path}}">
+            <a class="play-now _p-5" [routerLink]="'/movie/' + id">
+                Play Now
+            </a>
+        </div>
+        <div class="btn">
+            <div class="dub">DUB</div>
+            <div class="sub">SUB</div>
+            <p>TV</p>
+            <span nz-icon nzType="more" nzTheme="outline"></span>
+        </div>
+        <div class="title">
+            <a [routerLink]="'/movie/' + id">
+                <h3>{{original_title}}</h3>
+            </a>
+        </div>
+    </div> -->

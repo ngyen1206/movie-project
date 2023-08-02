@@ -1,27 +1,24 @@
-<owl-carousel-o [options]="{items: 1,loop: true,autoplay:false}">
-    <ng-container *ngFor="let item of array">
+<owl-carousel-o [options]="{items: 1,loop: true,autoplay:true}">
+    <ng-container *ngFor="let item of data">
         <ng-template carouselSlide>
-            <img class="bgr-banner" src="https://www.themoviedb.org/t/p/w1280/yF1eOkaYvwiORauRCPWznV9xVvi.jpg">
+            <img class="bgr-banner" src="https://image.tmdb.org/t/p/w1280{{item['poster_path']}}">
             <div class="container">
-                <div class="content-banner">
+                <div class="content-banner _dis-f">
                     <div class="left-content">
                         <div class="name-movie">
-                            <h1><b>One Peice</b></h1>
+                            <h1><b>{{item['original_title']}}</b></h1>
                         </div>
                         <div class="season">
                             <h3>Seanson 4</h3>
                         </div>
                         <div class="date">
-                            <h3>MAY 07,2023</h3>
+                            <h3>{{item['release_date']}}</h3>
                         </div>
-                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                            occaecati cupiditate non provident. </p>
-                        <div class="play-trailer">PLAY TRAILER</div>
-
+                        <p>{{item['overview']}}</p>
+                        <a href="" class="play-trailer">PLAY TRAILER</a>
                     </div>
                     <div class="right-content">
-                        <img src="https://www.themoviedb.org/t/p/w1280/yF1eOkaYvwiORauRCPWznV9xVvi.jpg">
+                        <img src="https://image.tmdb.org/t/p/w1280{{item['poster_path']}}">
                     </div>
 
                 </div>

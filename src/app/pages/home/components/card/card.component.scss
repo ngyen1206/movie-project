@@ -3,35 +3,80 @@ h3 {
   color: aliceblue;
 }
 
+.container{
+  margin: 0 235px;
+}
 nz-carousel {
-    text-align: center;
-    height: 400px;
-    width: auto;
-    line-height: 160px;
-    overflow: hidden;
+  text-align: center;
+  height: 400px;
+  width: auto;
+  line-height: 160px;
+  overflow: hidden;
+}
+
+.card-item{
+  width: 25%;
+}
+.title {
+  margin: 10px;
+}
+
+.items{
+  flex-wrap: wrap;
+}
+.play-now {
+  display: none;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 35%;
+  left: 50%;
+  border: none;
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: bold;
+
+  // &:hover {
+  //   display: block;
+  // }
+
+}
+
+img{
+  border-radius: 15px;
+}
+.card-img:hover {
+  img{
+    opacity: 0.3;
   }
-  
-  
-  .title {
-    margin: 10px;
+
+  .play-now {
+    display: block;
   }
-  
-  .detail {
-    display: none;
-  
-  }
-  
-  .card-img:hover {
-    opacity: 0.5;
-    .detail {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-      background-color: #17b8db;
-      border: none;
-      color: aliceblue;
-      border-radius: 25px;
-      display: block;
+}
+
+.btn {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+
+  .dub,
+  .sub {
+    border: #f5cf49 solid 2px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: fit-content;
+    color: aliceblue;
+    margin: 5px;
+
+    &:hover {
+      background-color: #f5cf49;
     }
   }
+
+}
+.title:hover{
+  h3{
+    color: #f5cf49;
+  }
+
+}

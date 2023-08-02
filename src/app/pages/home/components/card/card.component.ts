@@ -16,4 +16,10 @@ export class CardComponent {
   @Input()
   customOptions: OwlOptions = {}
 
+  @Input()
+  public id: string = '';
+  @Input()
+  public poster_path: string = '';
+  @Input()
+  public original_title: string = '';
 }

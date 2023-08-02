@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 export class SlideBannerComponent {
   public array = [1, 2, 3, 4, 5, 6];
 
+  @Input()
+  public data =[];
 }
