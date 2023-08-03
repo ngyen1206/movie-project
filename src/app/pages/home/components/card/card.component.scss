@@ -6,14 +6,6 @@ h3 {
 .container{
   margin: 0 235px;
 }
-nz-carousel {
-  text-align: center;
-  height: 400px;
-  width: auto;
-  line-height: 160px;
-  overflow: hidden;
-}
-
 .card-item{
   width: 25%;
 }
@@ -25,13 +17,13 @@ nz-carousel {
   flex-wrap: wrap;
 }
 .play-now {
-  display: none;
+  //display: none;
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 35%;
-  left: 50%;
-  border: none;
-  color: aliceblue;
+  // top: 50%;
+  // left: 50%;
+  // border: none;
+  color: red;
   font-size: 20px;
   font-weight: bold;
 
@@ -49,9 +41,9 @@ img{
     opacity: 0.3;
   }
 
-  .play-now {
-    display: block;
-  }
+  // .play-now {
+  //   display: block;
+  // }
 }
 
 .btn {

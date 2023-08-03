@@ -1,0 +1,17 @@
+footer{
+    background-color: #111111;
+}
+.background-footer{
+    background-image: url(https://uiparadox.co.uk/templates/animeloop/demo/assets/media/footer/footer-bg.png);
+    .container{
+        padding: 50px 0px;
+    }
+    .left{
+        width: 50%;
+    }
+}
+.container{
+    justify-content: space-between;
+    display: flex;
+    margin: 0px 250px;
+}

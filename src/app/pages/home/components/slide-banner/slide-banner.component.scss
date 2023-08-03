@@ -4,13 +4,17 @@
     top: 50%;
     left: 50%;
     color: aliceblue;
-    //display: flex;
+    width: 100%;
+    padding: 0 250px;
 
     .name-movie {
         font-size: 50px;
         text-transform: uppercase;
     }
 
+    p{
+        padding-bottom: 30px;
+    }
     .play-trailer {
         font-size: 30px;
         font-weight: 600;
@@ -26,9 +30,10 @@
     }
 
     .left-content{
-        width: 100%;
+        padding: 20px;
     }
     .right-content {
+       padding: 20px;
         img {
             height: 600px;
             object-fit: cover;
@@ -44,4 +49,7 @@
     height: 700px;
     object-fit: cover;
     opacity: 0.3;
+}
+.owl-prev{
+    background: red;
 }

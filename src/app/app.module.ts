@@ -9,8 +9,9 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NavbarModule } from './pages/navbar/navbar.module';
+import { FooterModule } from './pages/footer/footer.module';
 
 
 registerLocaleData(en);
@@ -25,11 +26,12 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    IconsProviderModule,
-    NzLayoutModule
+    NzLayoutModule,
+    NavbarModule,
+    FooterModule
   ],
   providers: [
-    { provide: NZ_I18N, useValue: en_US }
+    { provide: NZ_I18N, useValue: en_US },
   ],
   bootstrap: [AppComponent]
 })

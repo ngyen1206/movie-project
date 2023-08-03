@@ -1,4 +1,4 @@
-<div class="main-movie _m-50">
+<!-- <div class="main-movie _m-50">
     <div class="header-movie">
         <div class="poster _m-50 _dis-f">
             <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="">
@@ -22,5 +22,46 @@
             <h3>Vote Average</h3>
             <p>{{movie.vote_average}}</p>
         </div>
+    </div> -->
+<div class="container">
+    <div class="video _dis-f">
+        <div class="trailer">
+            <iframe width="786" height="329" src="https://www.youtube.com/embed/euTxpe61NE8"
+                title="Jersey Boys - Can&#39;t Take My Eyes Off You (The story of The Four Seasons) HD" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="season">
+            <p>Season 1</p>
+        </div>
     </div>
-    <iframe width="786" height="329" src="https://www.youtube.com/embed/euTxpe61NE8" title="Jersey Boys - Can&#39;t Take My Eyes Off You (The story of The Four Seasons) HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="detail _dis-f">
+        <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="">
+        <div class="content-movie">
+            <div class="name-movie">
+                <h1>{{movie.original_title}}</h1>
+            </div>
+            <div class="date">
+                <p>{{movie.release_date}}</p>
+            </div>
+            <p>{{movie.overview}}</p>
+        </div>
+    </div>
+    <div class="rating _dis-f">
+        <div class="rating-score">
+            <h3>RATE THE SHOW</h3>
+            <div class="score"><p>YOUR RATING: _/10</p></div>
+        </div>
+        <div class="rating-score">
+            <h3>RATE THE SHOW</h3>
+            <div class="score"><p>YOUR RATING: _/10</p></div>
+        </div>
+        <div class="rating-score">
+            <h3>RATE THE SHOW</h3>
+            <div class="score"><p>YOUR RATING: _/10</p></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="comment"></div>
+</div>
