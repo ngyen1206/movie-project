@@ -4,14 +4,19 @@
         <ng-container *ngFor="let item of data">
             <div class="card-item">
                 <div class="card-img">
-                    <img src="https://image.tmdb.org/t/p/w300{{item['poster_path']}}">
-                    <a class="play-now _p-5" [routerLink]="'/movie/' + item['id']">Play Now</a>
+                    <img src="https://image.tmdb.org/t/p/w300{{item['poster_path']}}"> <br>
+                    <a class="play-now" [routerLink]="'/movie/' + item['id']"><i class="fa-solid fa-circle-play">
+                            Play Now</i></a>
                 </div>
-                <div class="btn">
-                    <div class="dub">DUB</div>
-                    <div class="sub">SUB</div>
-                    <p>TV</p>
-                    <span nz-icon nzType="more" nzTheme="outline"></span>
+                <div class="tag">
+                    <div class="left _dis-f">
+                        <div class="dub">DUB</div>
+                        <div class="sub">SUB</div>
+                        <p>TV</p>
+                    </div>
+                    <div class="right">
+                        <div class="drop-menu"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                    </div>
                 </div>
                 <div class="title">
                     <a [routerLink]="'/movie/' + item['id']">
@@ -22,22 +27,3 @@
         </ng-container>
     </div>
 </div>
-<!-- <div class="card-item _m-15">
-        <div class="card-img">
-            <img src="https://image.tmdb.org/t/p/w200{{poster_path}}">
-            <a class="play-now _p-5" [routerLink]="'/movie/' + id">
-                Play Now
-            </a>
-        </div>
-        <div class="btn">
-            <div class="dub">DUB</div>
-            <div class="sub">SUB</div>
-            <p>TV</p>
-            <span nz-icon nzType="more" nzTheme="outline"></span>
-        </div>
-        <div class="title">
-            <a [routerLink]="'/movie/' + id">
-                <h3>{{original_title}}</h3>
-            </a>
-        </div>
-    </div> -->

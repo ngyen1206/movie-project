@@ -16,10 +16,17 @@
 
 a {
     color: #D4D4D4;
+    &:active{
+        color: #f5cf49;
+    }
+    &:hover{
+        color: #a958a5;
+    }
 }
 
 li {
     margin: 10px;
+   
 
     .sign-up {
          font-size: 15px;

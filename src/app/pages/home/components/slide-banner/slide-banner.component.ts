@@ -18,9 +18,9 @@ export class SlideBannerComponent {
     dots: false,
     autoplay: false,
     navText: [
-      '<i class="fa fa-angle-left fa-lg" aria-hidden="true"></i>',
-      '<i class="fa-solid fa-chevron-right fa-lg"></i>'
+      '<i class="fa fa-angle-left fa-lg _br-color" aria-hidden="true"></i>',
+      '<i class="fa-solid fa-chevron-right fa-lg "></i>'
     ],
-    nav: true,
+    nav: true
   }
 }
