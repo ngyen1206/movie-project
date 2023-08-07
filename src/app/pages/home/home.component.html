@@ -7,8 +7,20 @@
     <div class="popular">
         <app-card title="POPULAR ANIME" [data]=data></app-card>
     </div>
-    <div class="weekly-schedule"></div>
-    <div class="new">
-        <app-card-movie-small></app-card-movie-small>
+    <div class="weekly-schedule">
     </div>
+    <div class="top-moive">
+        <div class="container _dis-f">
+            <div class="top-rated">
+                <app-card-movie-small *ngFor="let item of array"></app-card-movie-small>
+            </div>
+            <div class="new">
+                <app-card-movie-small *ngFor="let item of array"></app-card-movie-small>
+            </div>
+            <div class="recently-completed">
+                <app-card-movie-small *ngFor="let item of array"></app-card-movie-small>
+            </div>
+        </div>       
+    </div>
+    <app-blogs></app-blogs>
 </div>

@@ -7,15 +7,19 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CardComponent } from './components/card/card.component';
 import { CardModule } from './components/card/card.module';
 import { SlideBannerComponent } from './components/slide-banner/slide-banner.component';
-import { CardMovieSmallComponent } from './components/card-movie-small/card-movie-small.component';
 import { SlideBannerModule } from './components/slide-banner/slide-banner.module';
+import { CardMovieSmallModule } from './components/card-movie-small/card-movie-small.module';
+import { CardMovieSmallComponent } from './components/card-movie-small/card-movie-small.component';
+import { BlogsModule } from './components/blogs/blogs.module';
+import { BlogsComponent } from './components/blogs/blogs.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CardComponent,
     SlideBannerComponent,
-    CardMovieSmallComponent
+    CardMovieSmallComponent,
+    BlogsComponent
   ],
   imports: [
     CommonModule,

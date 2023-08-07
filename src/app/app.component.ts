@@ -3,6 +3,7 @@ import { Subject, debounceTime } from 'rxjs';
 import { DataService } from './service/data.service';
 import { ActivatedRoute } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @Component({

@@ -5,9 +5,7 @@ import { CardMovieSmallComponent } from './card-movie-small.component';
 
 
 @NgModule({
-  declarations: [
-    CardMovieSmallComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule
   ],

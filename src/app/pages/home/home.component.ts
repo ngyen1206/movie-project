@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   public id: string = '';
   public backdrop_path: string = '';
   public data = [];
-  public array = [1, 2, 3, 4, 5, 6];
+  public array = [1, 2, 3];
 
   constructor(
     public service: DataService

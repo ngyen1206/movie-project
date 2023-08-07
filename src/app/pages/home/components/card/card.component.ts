@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -22,4 +23,5 @@ export class CardComponent {
   public poster_path: string = '';
   @Input()
   public original_title: string = '';
+
 }
