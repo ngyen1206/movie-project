@@ -1,50 +1,33 @@
-<!-- <div class="main-movie _m-50">
-    <div class="header-movie">
-        <div class="poster _m-50 _dis-f">
-            <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="">
-            <div class="tilte-header _p-30">
-                <div class="name-movie"><h1>{{movie.original_title}}</h1></div>
-                <div class="date"><p>{{movie.release_date}}</p></div>
-            </div>
-        </div>
-    </div>
-   <a href="https://www.youtube.com/watch?v=wVDEuVefTvA">Watch Trailer</a>
-    <div class="information-movie">
-        <div class="overview">
-            <h3>Overview</h3>
-            <p>{{movie.overview}}</p>
-        </div>
-        <div class="popularity">
-            <h3>Popularity</h3>
-            <p>{{movie.popularity}}</p>
-        </div>
-        <div class="vote-Average">
-            <h3>Vote Average</h3>
-            <p>{{movie.vote_average}}</p>
-        </div>
-    </div> -->
+
 <div class="container">
     <div class="video _dis-f">
         <div class="trailer">
-            <iframe width="786" height="329" src="https://www.youtube.com/embed/euTxpe61NE8"
+            <iframe width="1280" height="700" src="https://www.youtube.com/embed/euTxpe61NE8"
                 title="Jersey Boys - Can&#39;t Take My Eyes Off You (The story of The Four Seasons) HD" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
-        </div>
-        <div class="season">
-            <p>Season 1</p>
-        </div>
+        </div>       
     </div>
     <div class="detail _dis-f">
         <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="">
         <div class="content-movie">
-            <div class="name-movie">
-                <h1>{{movie.original_title}}</h1>
+            <h1><p><b>{{movie.original_title}}</b></p></h1>
+            <h3><p>{{movie.release_date}}</p></h3>         
+            <p>{{movie.overview}}</p>
+            <!-- <div class="name-movie">
+                <h1><b>{{movie.original_title}}</b></h1>
             </div>
             <div class="date">
                 <p>{{movie.release_date}}</p>
             </div>
-            <p>{{movie.overview}}</p>
+            <p>{{movie.overview}}</p> -->
+        </div>
+        <div class="detail-movie">
+            <p><b>Original Title</b><br>Meg 2: The Trench</p>
+            <p><b>Status</b><br>Released</p>
+            <p><b>Original Language</b><br>Tiếng Anh</p>
+            <p><b>Budget</b><br>$129,000,000.00</p>
+            <p><b>Revenue</b><br>$142,000,000.00</p>
         </div>
     </div>
     <div class="rating _dis-f">
@@ -62,6 +45,19 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="comment"></div>
-</div>
+<div class="container _dis-f">
+    <div class="comment">
+        <h1>COMMENTS</h1>
+        <p>We hope you have a good time browsing the comment section!
+            Please read our Comment Policy before commenting.</p>
+            <ng-container *ngFor="let item of array">
+                <app-comment></app-comment> 
+            </ng-container>
+    </div>
+    <div class="similar">
+        <h1>SIMILAR</h1>
+        <ng-container *ngFor="let item of array">
+            <app-card-movie-small [poster_path]="movie.poster_path" [original_title]="movie.original_title"></app-card-movie-small>
+        </ng-container>
+    </div>
+</div> 

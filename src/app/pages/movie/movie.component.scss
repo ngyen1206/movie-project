@@ -1,7 +1,39 @@
-.poster{
-  height: 500px; 
+.poster {
+  height: 500px;
   width: auto;
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container{
+  margin: 0 235px 50px;
+}
+.trailer{
+  padding: 80px 0 30px;
+}
+.detail{
+  img{
+    border-radius:20px;
+  }
+}
+.content-movie{
+  width: calc(100%*0.6);
+    padding: 20px;
+    p{
+      margin-bottom: 20px;
+    }
+}
+.detail-movie{
+  padding: 20px;
+  p{
+    margin-bottom: 20px;
+  }
+}
+.rating-score{
+  width: calc(100%/3);
+  padding: 30px;
+}
+.similar{
+  width: calc(100%/3);
 }

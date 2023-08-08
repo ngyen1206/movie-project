@@ -9,7 +9,7 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class MovieComponent implements OnInit {
   public tilte = ['Overview', 'Popularity', 'Vote Average'];
-
+  public array = [1, 2, 3, 4];
   @Input()
   public movie: any = {};
   constructor(
@@ -19,7 +19,7 @@ export class MovieComponent implements OnInit {
 
   }
   showVideoMovie() {
- 
+
   }
   async ngOnInit(): Promise<void> {
     const id = this.router.snapshot.paramMap.get('id');
