@@ -1,18 +1,22 @@
-
 <div class="container">
     <div class="video _dis-f">
         <div class="trailer">
-            <iframe width="1280" height="700" src="https://www.youtube.com/embed/euTxpe61NE8"
+            <iframe width="1280" height="700" [src]="safeUrl"
                 title="Jersey Boys - Can&#39;t Take My Eyes Off You (The story of The Four Seasons) HD" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-        </div>       
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
     <div class="detail _dis-f">
         <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="">
         <div class="content-movie">
-            <h1><p><b>{{movie.original_title}}</b></p></h1>
-            <h3><p>{{movie.release_date}}</p></h3>         
+            <h1>
+                <p><b>{{movie.original_title}}</b></p>
+            </h1>
+            <h3>
+                <p>{{movie.release_date}}</p>
+            </h3>
             <p>{{movie.overview}}</p>
             <!-- <div class="name-movie">
                 <h1><b>{{movie.original_title}}</b></h1>
@@ -33,15 +37,21 @@
     <div class="rating _dis-f">
         <div class="rating-score">
             <h3>RATE THE SHOW</h3>
-            <div class="score"><p>YOUR RATING: _/10</p></div>
+            <div class="score">
+                <p>YOUR RATING: _/10</p>
+            </div>
         </div>
         <div class="rating-score">
             <h3>RATE THE SHOW</h3>
-            <div class="score"><p>YOUR RATING: _/10</p></div>
+            <div class="score">
+                <p>YOUR RATING: _/10</p>
+            </div>
         </div>
         <div class="rating-score">
             <h3>RATE THE SHOW</h3>
-            <div class="score"><p>YOUR RATING: _/10</p></div>
+            <div class="score">
+                <p>YOUR RATING: _/10</p>
+            </div>
         </div>
     </div>
 </div>
@@ -50,14 +60,16 @@
         <h1>COMMENTS</h1>
         <p>We hope you have a good time browsing the comment section!
             Please read our Comment Policy before commenting.</p>
-            <ng-container *ngFor="let item of array">
-                <app-comment></app-comment> 
-            </ng-container>
+        <ng-container *ngFor="let item of array">
+            <app-comment></app-comment>
+        </ng-container>
     </div>
     <div class="similar">
         <h1>SIMILAR</h1>
-        <ng-container *ngFor="let item of array">
-            <app-card-movie-small [poster_path]="movie.poster_path" [original_title]="movie.original_title"></app-card-movie-small>
+        <ng-container *ngFor="let item of data">
+            <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']"
+                [original_title]="item['original_title']" (click)="reloadPage()">
+            </app-card-movie-small>
         </ng-container>
     </div>
-</div> 
+</div>
