@@ -8,17 +8,14 @@ import { CardComponent } from './components/card/card.component';
 import { CardModule } from './components/card/card.module';
 import { SlideBannerComponent } from './components/slide-banner/slide-banner.component';
 import { SlideBannerModule } from './components/slide-banner/slide-banner.module';
-import { CardMovieSmallModule } from './components/card-movie-small/card-movie-small.module';
-import { CardMovieSmallComponent } from './components/card-movie-small/card-movie-small.component';
-import { BlogsModule } from './components/blogs/blogs.module';
 import { BlogsComponent } from './components/blogs/blogs.component';
+import { CardMovieSmallModule } from './components/card-movie-small/card-movie-small.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CardComponent,
     SlideBannerComponent,
-    CardMovieSmallComponent,
     BlogsComponent
   ],
   imports: [
@@ -27,7 +24,8 @@ import { BlogsComponent } from './components/blogs/blogs.component';
     NzCarouselModule,
     CarouselModule,
     CardModule,
-    SlideBannerModule
+    SlideBannerModule,
+    CardMovieSmallModule
   ],
   exports: [
     HomeComponent

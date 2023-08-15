@@ -134,3 +134,20 @@ p{
     display: flex;
 }
 
+:root {
+    --container-width: 80%;
+  }
+
+  .owl-carousel .owl-nav {
+    .owl-prev,.owl-next{
+        background: none;
+        margin: 0 30px;
+        &:hover{
+            background: none;
+        }
+    }
+}
+.section::-webkit-scrollbar {
+    width: 10px;
+    background-color: aqua;
+  }

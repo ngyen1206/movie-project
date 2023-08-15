@@ -22,3 +22,16 @@
       border: #f5cf49 solid 2px;
     }
 }
+.name{
+    color: aliceblue;
+    padding: 0 10px 10px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    &:hover{
+        color: #f5cf49;
+    }
+}
+img{
+    width: 70px;
+    border-radius: 10px;
+}

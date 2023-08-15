@@ -75,14 +75,14 @@ export class DataService {
     });
   }
 
-  public async getVideoMovie($idMovie: string, $keyMovie: string){
+  public async getVideoMovie($idMovie: string){
     const options = {
       method: 'GET',
-      url: `https://api.themoviedb.org/3/movie/${$idMovie}/${$keyMovie}`,
+      url: `https://api.themoviedb.org/3/movie/${$idMovie}/videos?language=en-US`,
       headers: {
         accept: this.accept,
         Authorization: this.authorization
-      },
+      }
     };
     return await axios.request(options).then(function (response: { data: any; }) {
       return response.data;

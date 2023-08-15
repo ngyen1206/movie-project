@@ -5,18 +5,13 @@
         width: 100%;
         justify-content: space-between;
         background: none;
-        .owl-prev{
-            background-color: none;
-            color: #f5cf49;
-        }
-    
 }
 :host::ng-deep .content-body {
     background-color: none;
     color: #f5cf49;
     }
    
-
+    
 
 .content-banner {
     position: absolute;

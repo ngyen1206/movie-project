@@ -36,28 +36,7 @@ header {
     padding: 10px;
   }
 
-  .list-group {
-    position: absolute;
-    top: 104%;
-    border-radius: 12px;
-    //background-color: #374151;
 
-    li {
-      a {
-        color: white;
-        width: 100%;
-        padding: 4px 0;
-        display: block;
-        transition: .5;
-
-        &:hover {
-          opacity: .8;
-          background-color: #242b36;
-          transition: .5;
-        }
-      }
-    }
-  }
 }
 
 nz-footer {

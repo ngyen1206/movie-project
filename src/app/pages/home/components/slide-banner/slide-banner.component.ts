@@ -9,6 +9,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class SlideBannerComponent {
   public array = [1, 2, 3, 4, 5, 6];
 
+  public a = false;
   @Input()
   public data = [];
 
@@ -18,9 +19,13 @@ export class SlideBannerComponent {
     dots: false,
     autoplay: false,
     navText: [
-      '<i class="fa fa-angle-left fa-lg _br-color" aria-hidden="true"></i>',
-      '<i class="fa-solid fa-chevron-right fa-lg "></i>'
+      '<i class="fa-solid fa-angle-left fa-2xl"></i>',
+      '<i class="fa-solid fa-angle-right fa-2xl"></i>'
     ],
     nav: true
+  }
+  async watchTrailer() {
+    console.log("abc");
+
   }
 }

@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NavbarModule } from './pages/navbar/navbar.module';
 import { FooterModule } from './pages/footer/footer.module';
+import { MovieModule } from './pages/movie/movie.module';
 
 
 registerLocaleData(en);
