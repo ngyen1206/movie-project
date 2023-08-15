@@ -7,22 +7,32 @@
         </div>
         <div class="right">
             <ul class="_dis-f">
-                <li><a href="">Anime</a></li>
-                <li><a href="">Movie</a></li>
-                <li><a href="">Manga</a></li>
-                <li><a href="">Page</a></li>
-                <li><form cForm class="d-flex" role="search">
-                    <!-- <span nz-icon nzType="search" nzTheme="outline"></span> -->
-                    <input aria-label="Search" cFormControl class="me-2" placeholder="Search" type="search">
-                </form></li>
-                
-                
-                <li><div class="sign-up _p-5"><a href="">SIGN UP</a></div></li>
-                <li><div class="log-in _p-5"><a href="">LOG IN</a></div></li>
-                
-                
+                <li><a class="nav-item" href="">Anime</a></li>
+                <li><a class="nav-item" href="">Movie</a></li>
+                <li><a class="nav-item" href="">Manga</a></li>
+                <li><a class="nav-item" href="">Page</a></li>
+                <li>
+                    <div class="search-wrapper">
+                        <form cForm class="d-flex" role="search">
+                            <input class="me-2" type="text" (input)="onInputChange($event)"
+                                placeholder="Enter your Search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </form>
+                        <ul class="list-group list-group-flush" *ngIf="loading === true">
+                            <li class="list-group-item" *ngFor="let results of searchResults">
+                                <a [routerLink]="'/movie/' + results['id']" (click)="loading=false"> {{results.original_title}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="sign-up _p-5"><a href="">SIGN UP</a></div>
+                </li>
+                <li>
+                    <div class="log-in _p-5"><a href="">LOG IN</a></div>
+                </li>
             </ul>
-            
         </div>
     </div>
 </div>
+<div class="back-to-top"><i class="fa-solid fa-angles-up"  href="#top"></i></div>

@@ -16,20 +16,23 @@
 
 a {
     color: #D4D4D4;
-    &:active{
-        color: #f5cf49;
-    }
-    &:hover{
-        color: #a958a5;
-    }
+
+}
+
+.nav-item:active {
+    color: #f5cf49;
+}
+
+.nav-item:hover {
+    color: #a958a5;
 }
 
 li {
     margin: 10px;
-   
+
 
     .sign-up {
-         font-size: 15px;
+        font-size: 15px;
         border: #f5cf49 solid 2px;
         border-radius: 10px;
         padding: 5px 10px;
@@ -40,7 +43,7 @@ li {
     }
 
     .log-in {
-         font-size: 15px;
+        font-size: 15px;
         border: #a958a5 solid 2px;
         border-radius: 10px;
         padding: 5px 10px;
@@ -71,4 +74,61 @@ li {
         padding: 0px 5px;
         border: 2px solid red;
     }
+}
+
+.list-group {
+   // position: absolute;
+    top: 104%;
+    border-radius: 12px;
+    background-color: #374151;
+    width: 290px;
+
+    li {
+        a {
+            color: white;
+            width: 100%;
+            padding: 4px 0;
+            display: block;
+            transition: .5;
+
+            &:hover {
+                opacity: .8;
+                background-color: #242b36;
+                transition: .5;
+            }
+        }
+    }
+}
+
+.d-flex {
+
+        position: relative;
+
+    .fa-solid{
+        position: absolute;
+        color: aliceblue;
+        right: 15px;
+        top: 9px;
+    }
+}
+
+.search-wrapper{
+    position: relative;
+    .list-group{
+        position: absolute;
+        background-color: #242424;
+        z-index: 999;
+        height: 300px;
+        overflow: auto;
+        margin-top: 10px;
+    }
+}
+.back-to-top{
+    color: black;
+    background: #f5cf49;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    border-radius: 30px;
+    padding: 10px 17px;
 }
