@@ -1,7 +1,7 @@
 <div class="container">
     <div class="video _dis-f">
-        <div class="trailer">
-            <iframe width="1280" height="700" [src]="safeUrl"
+        <div class="trailer" *ngIf="key_movie">
+            <iframe width="1280" height="700" [src]="getSafeUrl(key_movie)"
                 title="Jersey Boys - Can&#39;t Take My Eyes Off You (The story of The Four Seasons) HD" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>

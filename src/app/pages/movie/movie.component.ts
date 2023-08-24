@@ -22,7 +22,7 @@ export class MovieComponent implements OnInit {
   public movie1: any = {};
 
   @Input()
-  public data: any = {};
+  public data: any = [];
   public key_movie: any = '';
   constructor(
     private service: DataService,
@@ -31,10 +31,10 @@ export class MovieComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {
     router1.events.subscribe(data => {
-      console.log(data);
-      this.loadData();
-      // this.reloadPage();
-      // return;
+      console.log('route',data);
+    //   this.loadData();
+    //   this.reloadPage();
+    //   return;
       
     })
   }
@@ -55,9 +55,12 @@ export class MovieComponent implements OnInit {
       this.movie = await this.service.getMovie(id);
       this.movie1 = await this.service.getVideoMovie(id);
       this.key_movie = this.movie1.results[0].key;
-      const unsafeUrl = `https://www.youtube.com/embed/${this.key_movie}`;
-      this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
     };
+  }
+
+  public getSafeUrl(key_movie: string) {
+    const unsafeUrl = `https://www.youtube.com/embed/${key_movie}`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
   }
  
 }

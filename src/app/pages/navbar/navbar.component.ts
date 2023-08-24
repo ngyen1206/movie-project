@@ -9,6 +9,7 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  public showColor = true;
   public searchTerm: any = '';
   public searchText = '';
   searchResults: any = [];
@@ -16,7 +17,8 @@ export class NavbarComponent {
   private searchSubject: Subject<string> = new Subject<string>();
   @Input()
   public movie: any = [];
-window: any;
+  window: any;
+$event: any;
 
   constructor(
     private service: DataService,
@@ -30,9 +32,6 @@ window: any;
     });
   }
 
-  public async ngOnInit() {
-    this.movie = await this.service.getListMovie();
-  }
   onInputChange(e: any) {
     this.searchSubject.next(e.currentTarget.value);
   }
@@ -50,11 +49,20 @@ window: any;
       );
     }
   }
+  
+  public async ngOnInit() {
+    this.movie = await this.service.getListMovie();
+  }
 
   async showMovie() {
     const id = this.router.snapshot.paramMap.get('id');
-      if (id) {
-        this.movie = await this.service.getMovie(id)
-      };
-    }
-  }  
+    if (id) {
+      this.movie = await this.service.getMovie(id)
+    };
+  }
+
+  scrollTopPage() {
+    this.window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  }
+}  

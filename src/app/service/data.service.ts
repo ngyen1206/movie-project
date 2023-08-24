@@ -7,7 +7,7 @@ import axios from 'axios';
 export class DataService {
 
   private authorization = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MzhhNGI2NWM5ZTI4YjBhOWZlNzlmMjZmZGM0YTEzNiIsInN1YiI6IjY0YjdhY2ZlZWVlMTg2MDBhZWQ5MTRiMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-2W0CNApDPv2Vr3KPjtfdlpzYH2WrBgRUOpc8-a5WF0';
-  private accept= 'application/json';
+  private accept = 'application/json';
 
   public async getListMoviesKnowLength(index: any) {
     const options = {
@@ -22,8 +22,7 @@ export class DataService {
       const result = response.data.results;
       result.length = index;
       return result;
-      // return response.data.results.length;
-    }).catch(function(error){
+    }).catch(function (error) {
       console.error(error);
     });
   }
@@ -37,8 +36,8 @@ export class DataService {
       },
     };
     return await axios.request(options).then(function (response: { data: any; }) {
-       return response.data.results;
-    }).catch(function(error){
+      return response.data.results;
+    }).catch(function (error) {
       console.error(error);
     });
   }
@@ -46,7 +45,7 @@ export class DataService {
   public async getMovie($idMovie: string) {
     const options = {
       method: 'GET',
-       url:'https://api.themoviedb.org/3/movie/'+$idMovie,
+      url: 'https://api.themoviedb.org/3/movie/' + $idMovie,
       headers: {
         accept: this.accept,
         Authorization: this.authorization
@@ -54,12 +53,12 @@ export class DataService {
     };
     return await axios.request(options).then(function (response: { data: any; }) {
       return response.data;
-    }).catch(function(error){
+    }).catch(function (error) {
       console.error(error);
     });
   }
 
-  public async getSearchResultsListMovie($tilteMovie: string){
+  public async getSearchResultsListMovie($tilteMovie: string) {
     const options = {
       method: 'GET',
       url: `https://api.themoviedb.org/3/search/movie?query=${$tilteMovie}`,
@@ -70,12 +69,12 @@ export class DataService {
     };
     return await axios.request(options).then(function (response: { data: any; }) {
       return response.data;
-    }).catch(function(error){
+    }).catch(function (error) {
       console.error(error);
     });
   }
 
-  public async getVideoMovie($idMovie: string){
+  public async getVideoMovie($idMovie: string) {
     const options = {
       method: 'GET',
       url: `https://api.themoviedb.org/3/movie/${$idMovie}/videos?language=en-US`,
@@ -86,7 +85,7 @@ export class DataService {
     };
     return await axios.request(options).then(function (response: { data: any; }) {
       return response.data;
-    }).catch(function(error){
+    }).catch(function (error) {
       console.error(error);
     });
   }

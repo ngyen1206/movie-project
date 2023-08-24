@@ -1,9 +1,8 @@
 <app-slide-banner [data]=data></app-slide-banner>
-<div class="main-home _br-color" id="top">
+<div class="main-home col-3">
     <div class="nrecently">
         <app-card title="NRECENTLY UPDATED" [data]=data></app-card>
     </div>
-    <div class="countdown"></div>
     <div class="popular">
         <app-card title="POPULAR ANIME" [data]=data></app-card>
     </div>
@@ -21,9 +20,9 @@
             <div class="new">
                 <h3>New</h3>
                 <ng-container *ngFor="let item of data">
-                    <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']" [original_title]="item['original_title']">
-                    </app-card-movie-small>
-                </ng-container>
+                        <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']" [original_title]="item['original_title']">
+                        </app-card-movie-small>
+                </ng-container >
             </div>
             <div class="recently-completed">
                 <h3>Recently Completed</h3>

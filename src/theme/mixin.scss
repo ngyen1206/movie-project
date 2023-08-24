@@ -1,0 +1,16 @@
+@media only screen and (min-width: 320px) {
+    @content();
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        background-color: rebeccapurple;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        background-color: rebeccapurple;
+    }
+}
+

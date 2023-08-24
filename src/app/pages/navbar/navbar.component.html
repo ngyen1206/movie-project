@@ -1,5 +1,5 @@
-<div class="navbar">
-    <div class="container _dis-f _p-15">
+<nav class="navbar">
+    <div class="container _dis-f _justify-content-between">
         <div class="left">
             <a href="" class="logo">
                 <img src="https://uiparadox.co.uk/templates/animeloop/demo/assets/media/logo.png">
@@ -7,32 +7,28 @@
         </div>
         <div class="right">
             <ul class="_dis-f">
-                <li><a class="nav-item" href="">Anime</a></li>
-                <li><a class="nav-item" href="">Movie</a></li>
-                <li><a class="nav-item" href="">Manga</a></li>
-                <li><a class="nav-item" href="">Page</a></li>
+                <li><a href="" class="nav-item">Home</a></li>
+                <li><a href="" class="nav-item">Movie</a></li>
+                <li><a href="" class="nav-item">TV Show</a></li>
+                <li><a href="" class="nav-item">People</a></li>
                 <li>
-                    <div class="search-wrapper">
+                    <div class="search">
                         <form cForm class="d-flex" role="search">
-                            <input class="me-2" type="text" (input)="onInputChange($event)"
+                            <input class="me-2 _b-rd-10" type="text" (input)="onInputChange($event)"
                                 placeholder="Enter your Search">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </form>
-                        <ul class="list-group list-group-flush" *ngIf="loading === true">
+                        <ul class="list-group list-group-flush _b-rd-15" *ngIf="loading === true">
                             <li class="list-group-item" *ngFor="let results of searchResults">
-                                <a [routerLink]="'/movie/' + results['id']" (click)="loading=false"> {{results.original_title}}</a>
+                                <a class="" [routerLink]="'/movie/' + results['id']" (click)="loading=false">
+                                    {{results.original_title}}</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <div class="sign-up _p-5"><a href="">SIGN UP</a></div>
-                </li>
-                <li>
-                    <div class="log-in _p-5"><a href="">LOG IN</a></div>
-                </li>
+                <li><a href="" class="nav-btn sign-up _b-rd-10">SIGN UP</a></li>
+                <li><a href="" class="nav-btn log-in _b-rd-10">LOG IN</a></li>
             </ul>
         </div>
     </div>
-</div>
-<div class="back-to-top"><i class="fa-solid fa-angles-up"  href="#top"></i></div>
+</nav>

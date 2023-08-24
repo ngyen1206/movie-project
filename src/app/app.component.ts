@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { Subject, debounceTime } from 'rxjs';
 import { DataService } from './service/data.service';
 import { ActivatedRoute } from '@angular/router';
@@ -13,10 +13,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 })
 export class AppComponent {
 
+  public showScrollButton: boolean = false;
   public loading: boolean = false;
   apiUrl: string = 'https://api.example.com/search';
-  @Input()
-  public menu = ['Home', 'Movie', 'TV Show'];
 
   @Input()
   public movie: any = [];
@@ -26,21 +25,19 @@ export class AppComponent {
   constructor(
     private service: DataService,
     private router: ActivatedRoute
-  ) {
-
-  }
+  ) { }
 
   public async ngOnInit() {
     this.movie = await this.service.getListMovie();
     console.log(this.movie);
 
   }
-}
+  scrollTopPage() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-// <nz-layout>
-//     <app-navbar></app-navbar>
-//     <nz-content class="_br-color">
-//         <router-outlet></router-outlet>
-//     </nz-content>
-//     <app-footer></app-footer>
-// </nz-layout>
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.showScrollButton = (window.scrollY > 200);
+  }
+}

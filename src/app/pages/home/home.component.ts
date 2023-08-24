@@ -7,8 +7,6 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public id: string = '';
-  public backdrop_path: string = '';
   public data = [];
   public array = [1, 2, 3];
 
@@ -17,7 +15,10 @@ export class HomeComponent implements OnInit {
   ) {
   }
   public async ngOnInit() {
-      this.data = await this.service.getListMoviesKnowLength(8);
-      console.log(this.data);
+    this.data = await this.service.getListMoviesKnowLength(4);
+  }
+
+  scrollTopPage() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
