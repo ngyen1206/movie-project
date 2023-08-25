@@ -1,4 +1,5 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
+@import 'theme/mixin.scss';
 /* You can add global styles to this file, and also import other style files */
 
 $space-amounts: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 150, 200, 250, 300;
@@ -181,47 +182,15 @@ p {
 }
 
 /* ------------Responsive--------------- */
-.row {
-    display: flex;
+[class*="col-"] {
+    float: left;
 }
 
 .row::after {
     content: "";
+    //float: left;
     display: table;
     clear: both;
-}
-
-@media only screen and (max-width: 991px) {
-
-    /* For Smartphones */
-    .col-sm {
-        width: 50%;
-        float: left;
-    }
-}
-
-@media only screen and (min-width: 992px) and (max-width:1024px) {
-
-    /* For Tablet */
-    .container {
-        width: 696px;
-    }
-
-    .col-md-6 {
-        width: 50%;
-
-    }
-}
-
-@media only screen and (min-width:1025px) {
-
-    /* For desktop: */
-    .container {
-        width: 1296px;
-    }
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
 }
 
 /*---------Display---------*/
@@ -278,4 +247,62 @@ body {
 
 ._justify-content-between {
     justify-content: space-between;
+}
+
+._float-right {
+    float: right;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+
+
+@include tablet {
+    .container {
+        width: 720px;
+
+        .col-md-6 {
+            width: 50%;
+            float: left;
+        }
+
+        .col-md-12 {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+
+
+@include mobile {
+    .col-sm-12 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+@include desktop {
+    .container {
+        width: 1320px;
+
+        .col-3 {
+            width: 25%;
+            float: left;
+        }
+
+        .col-4 {
+            width: 33.3333%;
+            float: left;
+        }
+
+        .col-6 {
+            width: 50%;
+            float: left;
+        }
+    }
 }

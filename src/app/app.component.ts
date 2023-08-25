@@ -17,6 +17,9 @@ export class AppComponent {
   public loading: boolean = false;
   apiUrl: string = 'https://api.example.com/search';
 
+
+  
+
   @Input()
   public movie: any = [];
 

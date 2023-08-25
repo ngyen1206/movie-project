@@ -1,19 +1,26 @@
-<div class="heading"><h2>BLOGS</h2></div>
-<div class="container _dis-f ">
-    <ng-container *ngFor="let item of array">
-        <div class="blog-item">
-            <img class="banner-blog" src="https://image.tmdb.org/t/p/w400/azTC5osYiqei1ofw6Z3GmUrxQbi.jpg">
-            <div class="detail">
-                <div class="_dis-f">
-                    <div class="movie-day">28 Nov 2022</div>
-                    <p>Anime</p>
-                </div>
-                <div class="tilte"><h4>WHY ONE PIECE'S 948TH EPISODE</h4></div>
-                <div class="author">
-                    <img src="https://uiparadox.co.uk/templates/animeloop/demo/assets/media/comment/comment-img-2.png">
-                    <p class="_p-10">Author Name</p>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of array">
+            <div class="col-4 col-md-6 col-sm-12 blog-item _b-rd-20">
+                <img class="blog-item-img _b-rd-20"
+                    src="https://image.tmdb.org/t/p/w400/azTC5osYiqei1ofw6Z3GmUrxQbi.jpg">
+                <div class="content">
+                    <div class="_dis-f _justify-content-between">
+                        <p class="movie-day">28 Nov 2022</p>
+                        <p>Anime</p>
+                    </div>
+                    <div class="blog-tilte">
+                        <a href="">
+                            <h4>WHY ONE PIECE'S 948TH EPISODE</h4>
+                        </a>
+                    </div>
+                    <div class="author _dis-f align-items-center">
+                        <img
+                            src="https://uiparadox.co.uk/templates/animeloop/demo/assets/media/comment/comment-img-2.png">
+                        <p class="_p-10">Author Name</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </ng-container>
+        </ng-container>
+    </div>
 </div>

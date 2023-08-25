@@ -13,6 +13,8 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NavbarModule } from './pages/navbar/navbar.module';
 import { FooterModule } from './pages/footer/footer.module';
 import { MovieModule } from './pages/movie/movie.module';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 registerLocaleData(en);
@@ -29,7 +31,9 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     NzLayoutModule,
     NavbarModule,
-    FooterModule
+    FooterModule,
+    NzGridModule,
+    MatGridListModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

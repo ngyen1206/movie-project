@@ -1,44 +1,23 @@
 .blog-item {
-    width: calc(100%/3);
-    border-radius: 20px;
     background: #111111;
-    margin: 0 12px;
 
-    .banner-blog {
+    .blog-item-img {
         height: 270px;
         width: 100%;
         object-fit: cover;
-        border-radius: 15px;
     }
 
-    .tilte {
-        font-size: 25px;
-        margin-bottom: 20px;
-    }
-
-    .detail {
+    .content {
         padding: 30px 20px;
 
-        ._dis-f {
-            justify-content: space-between;
+        h4 {
+            margin-bottom: 20px;
+
+            &:hover {
+                color: blueviolet;
+            }
+
         }
+
     }
-
-}
-
-.container {
-    margin: 0 235px;
-    padding: 15px;
-    color: aliceblue;
-    margin-bottom: 80px;
-}
-
-.author {
-    display: flex;
-    align-items: center;
-}
-
-.heading {
-    font-size: 40px;
-    margin: 0 235px;
 }

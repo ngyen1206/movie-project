@@ -1,16 +1,20 @@
-@media only screen and (min-width: 320px) {
-    @content();
-}
+/* Mixin */
+/* Set các giá trị với màn hình tương ứng */
+$mobile-width: 480px; 
+$tablet-width: 768px; 
+$desktop-width: 1024px;  
 
-@media only screen and (min-width: 768px) {
-    body {
-        background-color: rebeccapurple;
-    }
-}
+@mixin mobile { @media (max-width: #{$tablet-width - 1px}) {     
+  @content;   
+ } 
+}  
 
-@media only screen and (min-width: 1024px) {
-    body {
-        background-color: rebeccapurple;
-    }
-}
+@mixin tablet { @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {       
+   @content;   
+ } 
+}  
 
+@mixin desktop {   @media (min-width: #{$desktop-width}) {     
+  @content;  
+ } 
+}

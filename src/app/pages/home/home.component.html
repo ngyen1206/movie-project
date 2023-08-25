@@ -1,5 +1,5 @@
 <app-slide-banner [data]=data></app-slide-banner>
-<div class="main-home col-3">
+<div class="main-home">
     <div class="nrecently">
         <app-card title="NRECENTLY UPDATED" [data]=data></app-card>
     </div>
@@ -9,28 +9,31 @@
     <div class="weekly-schedule">
     </div>
     <div class="top-moive">
-        <div class="container _dis-f">
-            <div class="top-rated">
-                <h3>Top Rated</h3>
-                <ng-container *ngFor="let item of data">
-                    <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']" [original_title]="item['original_title']">
-                    </app-card-movie-small>
-                </ng-container>
-            </div>
-            <div class="new">
-                <h3>New</h3>
-                <ng-container *ngFor="let item of data">
+        <div class="container">
+            <div class="row">
+                <div class="top-rated col-4 col-md-6 col-sm-12">
+                    <h3>Top Rated</h3>
+                    <ng-container *ngFor="let item of data">
                         <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']" [original_title]="item['original_title']">
                         </app-card-movie-small>
-                </ng-container >
+                    </ng-container>
+                </div>
+                <div class="new col-4 col-md-6 col-sm-12">
+                    <h3>New</h3>
+                    <ng-container *ngFor="let item of data">
+                            <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']" [original_title]="item['original_title']">
+                            </app-card-movie-small>
+                    </ng-container >
+                </div>
+                <div class="recently-completed col-4 col-md-6 col-sm-12">
+                    <h3>Recently Completed</h3>
+                    <ng-container *ngFor="let item of data">
+                        <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']" [original_title]="item['original_title']">
+                        </app-card-movie-small>
+                    </ng-container>
+                </div>
             </div>
-            <div class="recently-completed">
-                <h3>Recently Completed</h3>
-                <ng-container *ngFor="let item of data">
-                    <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']" [original_title]="item['original_title']">
-                    </app-card-movie-small>
-                </ng-container>
-            </div>
+            
         </div>
     </div>
     <app-blogs></app-blogs>

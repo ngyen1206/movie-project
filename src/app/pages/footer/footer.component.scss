@@ -1,21 +1,15 @@
 footer {
     background-color: #111111;
-}
 
-.footer-main {
-    background-image: url(https://uiparadox.co.uk/templates/animeloop/demo/assets/media/footer/footer-bg.png);
-}
-.f-right{
-    float: right;
-}
-a:hover{
-color: blueviolet;
-}
-.footer-main{
-    .col-5{
-        padding: 50px 0;
-    }
-    .col-7{
-        padding: 110px 0;
+    .footer-main {
+        background-image: url(https://uiparadox.co.uk/templates/animeloop/demo/assets/media/footer/footer-bg.png);
+
+        .col-6 {
+            padding: 50px 0;   
+            justify-content: space-between;      
+        }        
+       a:hover {
+            color: blueviolet;
+        }
     }
 }

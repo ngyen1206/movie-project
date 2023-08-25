@@ -1,8 +1,8 @@
 <div class="container">
     <h2>{{title}}</h2>
-    <div class="items _dis-f">
+    <div class="items">
         <ng-container *ngFor="let item of data">
-            <div class="card-item">
+            <div class="card-item col-3 col-md-6 col-sm-12">
                 <div class="card-img">
                     <img src="https://image.tmdb.org/t/p/w300{{item['poster_path']}}"> <br>
                     <a class="play-now" [routerLink]="'/movie/' + item['id']"><i class="fa-solid fa-circle-play">
