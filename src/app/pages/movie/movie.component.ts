@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -24,6 +24,8 @@ export class MovieComponent implements OnInit {
   @Input()
   public data: any = [];
   public key_movie: any = '';
+  public url_vid?: SafeResourceUrl
+  https: any;
   constructor(
     private service: DataService,
     private router: ActivatedRoute,
@@ -31,21 +33,21 @@ export class MovieComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {
     router1.events.subscribe(data => {
-      console.log('route',data);
-    //   this.loadData();
-    //   this.reloadPage();
-    //   return;
-      
+      console.log('route', data);
+      if (data instanceof NavigationEnd) {
+        this.loadData();
+        this.reloadPage();
+        return;
+      }
     })
   }
-  reloadPage(){
-    window.location.reload();
+  reloadPage() {
     window.scrollTo(0, 0);
     return;
   }
 
   async ngOnInit(): Promise<void> {
-    this.loadData();
+    // this.loadData();
     this.data = await this.service.getListMoviesKnowLength(5);
   }
 
@@ -54,13 +56,16 @@ export class MovieComponent implements OnInit {
     if (id) {
       this.movie = await this.service.getMovie(id);
       this.movie1 = await this.service.getVideoMovie(id);
-      this.key_movie = this.movie1.results[0].key;
+      this.key_movie = this.movie1.results[1].key;
+      this.url_vid = this.getSafeUrl(this.key_movie)
     };
   }
 
   public getSafeUrl(key_movie: string) {
+    console.log('key: ', key_movie);
+
     const unsafeUrl = `https://www.youtube.com/embed/${key_movie}`;
     return this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
   }
- 
+
 }

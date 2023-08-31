@@ -12,12 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NavbarModule } from './pages/navbar/navbar.module';
 import { FooterModule } from './pages/footer/footer.module';
-import { MovieModule } from './pages/movie/movie.module';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import {MatGridListModule} from '@angular/material/grid-list';
-
-
-registerLocaleData(en);
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -33,7 +30,8 @@ registerLocaleData(en);
     NavbarModule,
     FooterModule,
     NzGridModule,
-    MatGridListModule
+    MatGridListModule,
+    MatInputModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

@@ -1,3 +1,4 @@
+@import '../../../../../theme/mixin.scss';
 ::ng-deep .owl-nav {
         position: absolute;
         top: 50%;
@@ -11,14 +12,11 @@
     color: #f5cf49;
     } 
     
-.content-banner {
+.container {
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    color: aliceblue;
-    width: 100%;
-    padding: 0 250px;
 
     .name-movie {
         font-size: 50px;
@@ -43,22 +41,30 @@
             background-color: #f5cf49;
         }
     }
-
-    .left-content {
-        padding: 20px;
-    }
-
-    .right-content {
-        padding: 20px;
-
+  
+    .col-6 {
         img {
             height: 600px;
-            object-fit: cover;
             border-radius: 15px;
-            width: 700px;
+            object-fit: cover;
+            
         }
     }
-
+    @include mobile{
+        .col-sm-12{
+            img{
+                display: none;
+            }
+        }
+    }
+    @include tablet{
+        .col-md-12{
+            img{
+                display: none;
+            }
+        }
+    }
+    
 }
 
 .bgr-banner {

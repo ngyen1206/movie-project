@@ -2,8 +2,6 @@ import { Component, HostListener, Input } from '@angular/core';
 import { Subject, debounceTime } from 'rxjs';
 import { DataService } from './service/data.service';
 import { ActivatedRoute } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @Component({
@@ -16,7 +14,7 @@ export class AppComponent {
   public showScrollButton: boolean = false;
   public loading: boolean = false;
   apiUrl: string = 'https://api.example.com/search';
-
+  public navbarOpen: boolean = false;
 
   
 
@@ -32,7 +30,6 @@ export class AppComponent {
 
   public async ngOnInit() {
     this.movie = await this.service.getListMovie();
-    console.log(this.movie);
 
   }
   scrollTopPage() {
@@ -43,4 +40,5 @@ export class AppComponent {
   onWindowScroll() {
     this.showScrollButton = (window.scrollY > 200);
   }
+  
 }

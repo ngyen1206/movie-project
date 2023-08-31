@@ -1,0 +1,12 @@
+<div class="container">
+    <p>Key work: <span>{{key}}</span></p>
+    <div class="row">
+        <ng-container *ngFor="let item of data">
+            <div class="col-4">
+                <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']"
+                [original_title]="item['original_title']" (click)="reloadPage()">
+            </app-card-movie-small>
+            </div>
+        </ng-container>
+    </div>
+</div>

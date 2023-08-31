@@ -4,12 +4,88 @@ footer {
     .footer-main {
         background-image: url(https://uiparadox.co.uk/templates/animeloop/demo/assets/media/footer/footer-bg.png);
 
-        .col-6 {
+        .col-4 {
             padding: 50px 0;   
             justify-content: space-between;      
-        }        
+            img, p{
+                margin-bottom: 35px;
+            }            
+        }   
+        .col-8{
+            padding: 110px 0;
+            p{
+                margin-bottom: 24px;
+            }
+        }     
        a:hover {
             color: blueviolet;
         }
     }
 }
+.right{
+    right: 0;
+}
+.search {
+    position: relative;
+button{
+    background-color: #242424;
+    padding: 5px 12px;
+    color: #d4d4d4d4;
+}
+    .me-2{
+        background-color: #242424;
+        padding: 5px 12px;
+        color: #d4d4d4d4;
+        width: 400px;
+    }
+
+    .list-group {
+        margin-top: 10px;
+        position: absolute;
+        top: 104%;
+        background-color: #374151;
+        width: 400px;
+        z-index: 999;
+        height: 300px;
+
+        li {
+            a {
+                padding: 10px 5px;
+                display: block;
+
+                &:hover {
+                    color: #a958a5;
+                }
+            }
+        }
+    }
+}
+
+input{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border: 1px solid wheat;
+    border-radius: 8px 0px 0px 8px;
+    font-weight: 400;
+    font-size: 18px;
+    height: 45px;
+}
+button{
+    background: rgba(0, 0, 0, 0.5);
+    height: 45px;
+    border: 1px solid wheat;
+    border-left: none;
+    border-radius: 0px 8px 8px 0px;
+    font-family: var(--font-Noir-Pro-Bold);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--color-white);
+    padding: 8px 16px;
+    color: aliceblue;
+    &:hover{
+        color: darkgoldenrod;
+    }
+    
+}
+

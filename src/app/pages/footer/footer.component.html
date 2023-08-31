@@ -2,7 +2,7 @@
     <div class="footer-main">
         <div class="container">
             <div class="row">
-                <div class="col-6 col-md-12">
+                <div class="left col-4 col-md-12">
                     <a href="" class="logo">
                         <img src="https://uiparadox.co.uk/templates/animeloop/demo/assets/media/logo.png">
                     </a>
@@ -23,12 +23,32 @@
                             alt="">
                     </div>
                 </div>
-                <div class="col-6 col-md-12">                 
+                <div class="col-8 col-md-12">
+                    <div class="_float-right">
                         <h2>GET NOTIFIED</h2>
-                    <p>Get emails for latest news about anime, and more.</p>
-                    <p>By subscribing you agree to our terms and conditions</p>              
-                    
-                     </div>
+                        <p>Get emails for latest news about anime, and more.</p>
+                        <!-- <div class="search">
+                            <form cForm class="d-flex" role="search">
+                                <input class="me-2" type="text" 
+                                    placeholder="info@example.com">
+                                <button type="submit">Subscribe</button>
+                            </form>
+                             <ul class="list-group list-group-flush _b-rd-15" *ngIf="loading === true">
+                                <li class="list-group-item" *ngFor="let results of searchResults">
+                                    <a class="" [routerLink]="'/movie/' + results['id']" (click)="loading=false">
+                                        {{results.original_title}}</a>
+                                </li>
+                            </ul> 
+                        </div> -->
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="info@example.com" aria-label="Recipient's username"
+                              aria-describedby="basic-addon2" />
+                            <button class="input-group-text" id="basic-addon2">Subscribe</button>
+                          </div>
+                          
+                        <p>By subscribing you agree to our terms and conditions</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -41,9 +61,8 @@
                 <div class="col-6 col-md-12 _t-a-r">
                     <a href="">Privacy Policy</a>
                     <a href="">Comments Policy</a>
-                </div>               
+                </div>
             </div>
         </div>
     </div>
 </footer>
-

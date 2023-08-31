@@ -1,75 +1,100 @@
 <div class="container">
-    <div class="video _dis-f">
-        <div class="trailer" *ngIf="key_movie">
-            <iframe width="1280" height="700" [src]="getSafeUrl(key_movie)"
-                title="Jersey Boys - Can&#39;t Take My Eyes Off You (The story of The Four Seasons) HD" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-        </div>
+    <div class="trailer" *ngIf="key_movie">
+        <iframe width="100%" height="700" [src]="url_vid"
+            title="Jersey Boys - Can&#39;t Take My Eyes Off You (The story of The Four Seasons) HD" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
     </div>
-    <div class="detail _dis-f">
-        <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" alt="">
-        <div class="content-movie">
-            <h1>
-                <p><b>{{movie.original_title}}</b></p>
-            </h1>
-            <h3>
-                <p>{{movie.release_date}}</p>
-            </h3>
-            <p>{{movie.overview}}</p>
-            <!-- <div class="name-movie">
-                <h1><b>{{movie.original_title}}</b></h1>
+    <div class="detail">
+        <div class="row">
+            <div class="col-9 col-md-12 col-sm-12 _p-10">
+                <div class="row">
+                    <div class="col-6 col-md-4 col-sm-12 _p-10">
+                        <img src="https://image.tmdb.org/t/p/w500/{{movie.backdrop_path}}">
+                    </div>
+                    <div class="col-6 col-md-8 col-sm-12 _p-10">
+                        <div class="content-movie">
+                            <h2>{{movie.original_title}}</h2>
+                            <h3>{{movie.release_date}}</h3>
+                            <p>{{movie.overview}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="rating">
+                        <div class="row">
+                            <div class="rating-score col-4 col-md-4 col-sm-6">
+                                <h3><b>RATE THE SHOW</b></h3>
+                                <div class="score">
+                                    <p>YOUR RATING: _/10</p>
+                                </div>
+                            </div>
+                            <div class="rating-score col-4 col-md-4 col-sm-6">
+                                <h3><b>RATE THE SHOW</b></h3>
+                                <div class="score">
+                                    <p>YOUR RATING: _/10</p>
+                                </div>
+                            </div>
+                            <div class="rating-score col-4 col-md-4 col-sm-6">
+                                <h3><b>RATE THE SHOW</b></h3>
+                                <div class="score">
+                                    <p>YOUR RATING: _/10</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div class="date">
-                <p>{{movie.release_date}}</p>
-            </div>
-            <p>{{movie.overview}}</p> -->
-        </div>
-        <div class="detail-movie">
-            <p><b>Original Title</b><br>Meg 2: The Trench</p>
-            <p><b>Status</b><br>Released</p>
-            <p><b>Original Language</b><br>Tiếng Anh</p>
-            <p><b>Budget</b><br>$129,000,000.00</p>
-            <p><b>Revenue</b><br>$142,000,000.00</p>
-        </div>
-    </div>
-    <div class="rating _dis-f">
-        <div class="rating-score">
-            <h3>RATE THE SHOW</h3>
-            <div class="score">
-                <p>YOUR RATING: _/10</p>
-            </div>
-        </div>
-        <div class="rating-score">
-            <h3>RATE THE SHOW</h3>
-            <div class="score">
-                <p>YOUR RATING: _/10</p>
-            </div>
-        </div>
-        <div class="rating-score">
-            <h3>RATE THE SHOW</h3>
-            <div class="score">
-                <p>YOUR RATING: _/10</p>
+            <div class="col-3 col-md-12 col-sm-12 _p-10">
+                <div class="detail-movie">
+                    <p><b>Original Title</b><br>Meg 2: The Trench</p>
+                    <p><b>Status</b><br>Released</p>
+                    <p><b>Original Language</b><br>Tiếng Anh</p>
+                    <p><b>Budget</b><br>$129,000,000.00</p>
+                    <p><b>Revenue</b><br>$142,000,000.00</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container _dis-f">
-    <div class="comment">
-        <h1>COMMENTS</h1>
-        <p>We hope you have a good time browsing the comment section!
-            Please read our Comment Policy before commenting.</p>
-        <ng-container *ngFor="let item of array">
-            <app-comment></app-comment>
-        </ng-container>
-    </div>
-    <div class="similar">
-        <h1>SIMILAR</h1>
-        <ng-container *ngFor="let item of data">
-            <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']"
-                [original_title]="item['original_title']" (click)="reloadPage()">
-            </app-card-movie-small>
-        </ng-container>
+<div class="container">
+    <div class="row">
+        <div class="col-8 col-sm-12">
+            <div class="comment">
+                <h2>COMMENTS</h2>
+                <p>We hope you have a good time browsing the comment section!</p>
+                <p> Please read our <a href="">Comment Policy</a>  before commenting.</p>
+                <div class="comment-input _dis-f">
+                    <div class="col-1">
+                        <img class="avatar-img"
+                            src="https://uiparadox.co.uk/templates/animeloop/demo/assets/media/comment/comment-img-2.png">
+                    </div>
+                    <div class="col-11">
+                        <form action="" class="form">
+                            <input type="text" placeholder="Join the discussion" class="form__input" id="name" />
+                            <button>Post</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="p-col-12 p-md-4">
+
+                </div>
+                <ng-container *ngFor="let item of array">
+                    <app-comment></app-comment>
+                </ng-container>
+            </div>
+        </div>
+        <div class="col-4 col-sm-12">
+            <div class="similar">
+                <h2>SIMILAR</h2>
+                <ng-container *ngFor="let item of data">
+                    <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']"
+                        [original_title]="item['original_title']" (click)="reloadPage()">
+                    </app-card-movie-small>
+                </ng-container>
+            </div>
+        </div>
     </div>
 </div>

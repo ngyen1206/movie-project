@@ -1,37 +1,97 @@
-.poster {
-  height: 500px;
-  width: auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.trailer{
-  padding: 80px 0 30px;
-  min-height: 700px;
-}
-.detail{
-  img{
-    border-radius:20px;
-  }
-}
-.content-movie{
-  width: calc(100%*0.6);
-    padding: 20px;
-    p{
-      margin-bottom: 20px;
+// .poster {
+//   height: 500px;
+//   width: auto;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
+// .col-sm-12{
+//   text-align: center;
+// }
+.col-md-4 {
+    img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: fill;
+        height: 100%s;
     }
 }
-.detail-movie{
-  padding: 20px;
-  p{
-    margin-bottom: 20px;
-  }
+
+h3 {
+    margin-bottom: 10px;
 }
-.rating-score{
-  width: calc(100%/3);
-  padding: 30px;
+
+.rating-score {
+    padding-top: 20px;
 }
-.similar{
-  width: calc(100%/3);
+
+// .trailer{
+//   padding: 80px 0 30px;
+//   min-height: 700px;
+// }
+// // .detail{
+// //   img{
+// //     border-radius:20px;
+// //   }
+// // }
+// // .content-movie{
+// //     padding: 20px;
+// //     p{
+// //       margin-bottom: 20px;
+// //     }
+// // }
+// // .detail-movie{
+// //   padding: 20px;
+// //   p{
+// //     margin-bottom: 20px;
+// //   }
+// // }
+// .rating-score{
+//   padding: 30px;
+// }
+b {
+    font-size: 18px;
+    font-weight: 900;
 }
+
+.score {
+    p {
+        font-weight: 400;
+        font-size: 20px;
+    }
+}
+
+.content-movie {
+    p {
+        font-weight: 400;
+        color: #d4d4ce;
+        font-size: 16px;
+    }
+}
+.comment-input{
+    margin: 20px 0;
+}
+input{
+    background: var(--color-dark-grey);
+    border-radius: 5px 0 0 5px;
+    padding: 10px 20px;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--color-white);
+    border: 2px solid #d4d4ce;
+    box-shadow: none;
+    width: 90%;
+    border-right: none;
+
+
+}
+button{
+    border: 2px solid #F5CF49;;
+    background: rgba(17, 17, 17, 0.3);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 15px;
+    color: white;
+border-radius:0 5px 5px 0;
+}
+

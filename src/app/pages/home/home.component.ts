@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
     this.data = await this.service.getListMoviesKnowLength(4);
   }
 
-  scrollTopPage() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  // scrollTopPage() {
+  //   window.scrollTo({ top: 0, behavior: 'smooth' });
+  // }
 }
