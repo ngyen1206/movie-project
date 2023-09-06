@@ -184,12 +184,14 @@ p {
 /* ------------Responsive--------------- */
 [class*="col-"] {
     float: left;
+
 }
 
 .row::after {
     content: "";
-    //float: left;
     display: table;
+    // display: flex;
+    // flex-wrap: wrap;
     clear: both;
 }
 
@@ -258,51 +260,56 @@ body {
 }
 
 
+$number-columns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 
 @include tablet {
+    .menu-navbar {
+        display: block;
+    }
+
+    .list-items {
+        display: none;
+    }
+
     .container {
         width: 720px;
+        padding: 0 20px;
 
-        .col-md-6 {
-            width: 50%;
-            float: left;
-        }
-
-        .col-md-12 {
-            width: 100%;
-            text-align: center;
+        @each $item in $number-columns {
+            .col-md-#{$item} {
+                width:calc(100%*#{$item}/12);
+            }
         }
     }
+
 }
-
-
 
 @include mobile {
-    .col-sm-12 {
-        width: 100%;
-        text-align: center;
+    .container {
+        padding: 0 10px;
+        @each $item in $number-columns {
+            .col-sm-#{$item} {
+                width:calc(100%*#{$item}/12);
+            }
+        }
+    }
+    .menu-navbar {
+        display: block;
+    }
+    .list-items {
+        display: none;
     }
 }
-
-
-
 @include desktop {
+    .menu-navbar {
+        display: none;
+    }
     .container {
-        width: 1320px;
-
-        .col-3 {
-            width: 25%;
-            float: left;
-        }
-
-        .col-4 {
-            width: 33.3333%;
-            float: left;
-        }
-
-        .col-6 {
-            width: 50%;
-            float: left;
+        width: 1296px;
+        @each $item in $number-columns {
+            .col-#{$item} {
+                width:calc(100%*#{$item}/12);
+            }
         }
     }
 }

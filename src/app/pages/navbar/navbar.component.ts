@@ -41,7 +41,6 @@ export class NavbarComponent {
   }
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
-    console.log(this.navbarOpen);
   }
   public async ngOnInit() {
     this.movie = await this.service.getListMovie();

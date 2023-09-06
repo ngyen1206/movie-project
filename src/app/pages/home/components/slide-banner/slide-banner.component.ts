@@ -39,7 +39,6 @@ export class SlideBannerComponent {
     },
   }
   async watchTrailer() {
-    console.log("abc");
 
   }
 }

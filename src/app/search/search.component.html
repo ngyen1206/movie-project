@@ -1,9 +1,9 @@
 <div class="search">
-    <form cForm class="d-flex" role="search">
-        <input class="me-2 _b-rd-10" type="text" (input)="onInputChange($event)" placeholder="Enter your Search">
-        <i #toggleButton (click)="onInputChange($event)" [routerLink]="'/result-search/'+key"
+    <div cForm class="d-flex" role="search">
+        <input class="me-2 _b-rd-10" type="text" (input)="onInputChange($event)" (keyup.enter)="searchMovie()" placeholder="Enter your Search">
+        <i #toggleButton (click)="searchMovie()"
             class="fa-solid fa-magnifying-glass" #search></i>
-    </form>
+    </div>
     <ul class="list-group list-group-flush _b-rd-15" *ngIf="loading === true" #list>
         <li class="list-group-item" *ngFor="let results of searchResults">
             <a class="" [routerLink]="'/movie/' + results['id']" (click)="loading=false">

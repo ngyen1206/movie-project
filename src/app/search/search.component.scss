@@ -1,54 +1,59 @@
-.search{
-    input:focus{
-        border:none;
+.search {
+    input:focus-visible {
+        // border-color: #D4D4D4 ;
+        outline: none;
     }
 }
+           
 input:placeholder-shown {
     background-color: ivory;
     border: 2px solid darkorange;
     border-radius: 5px;
-  }
+}
 
-input::after{
+input::after {
     content: '';
     clear: both;
 }
+
 .search {
-                position: relative;
+    position: relative;
 
-                .me-2 {
-                    background-color: #242424;
-                    border: #D4D4D4 solid 2px;
-                    padding: 5px 12px;
-                    color: #d4d4d4d4;
-                    width: 400px;
-                }
+    .me-2 {
+        background-color: #242424;
+        border-color: #D4D4D4 ;
+        // border: #D4D4D4 solid 2px;
+        padding: 5px 12px;
+        color: #d4d4d4d4;
+        width: 400px;
+    }
 
-                .fa-solid {
-                    position: absolute;
-                    color: aliceblue;
-                    right: 15px;
-                    top: 9px;
-                }
+    .fa-solid {
+        position: absolute;
+        color: aliceblue;
+        right: 15px;
+        top: 9px;
+    }
 
-                .list-group {
-                    margin-top: 10px;
-                    position: absolute;
-                    top: 104%;
-                    background-color: #374151;
-                    width: 400px;
-                    z-index: 999;
-                    height: 300px;
+    .list-group {
+        margin-top: 10px;
+        position: absolute;
+        top: 104%;
+        background-color: #374151;
+        width: 400px;
+        z-index: 999;
+        height: 300px;
+        overflow-y: scroll;
 
-                    li {
-                        a {
-                            padding: 10px 5px;
-                            display: block;
+        li {
+            a {
+                padding: 10px 5px;
+                display: block;
 
-                            &:hover {
-                                color: #a958a5;
-                            }
-                        }
-                    }
+                &:hover {
+                    color: #a958a5;
                 }
             }
+        }
+    }
+}

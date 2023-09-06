@@ -33,7 +33,6 @@ export class MovieComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {
     router1.events.subscribe(data => {
-      console.log('route', data);
       if (data instanceof NavigationEnd) {
         this.loadData();
         this.reloadPage();
@@ -62,8 +61,6 @@ export class MovieComponent implements OnInit {
   }
 
   public getSafeUrl(key_movie: string) {
-    console.log('key: ', key_movie);
-
     const unsafeUrl = `https://www.youtube.com/embed/${key_movie}`;
     return this.sanitizer.bypassSecurityTrustResourceUrl(unsafeUrl);
   }
