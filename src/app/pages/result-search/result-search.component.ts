@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, ActivationEnd, NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { filter } from 'rxjs/operators';
@@ -11,18 +11,20 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./result-search.component.scss']
 })
 export class ResultSearchComponent {
-  public preformSearch: any = [];
+  public listSearch: any = [];
   public movie: any = {};
   public key: any = '';
+
   constructor(
     private service: DataService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
+    //khi chuyển trang thành công sẽ gán lấy giá trị key trên url và load lại dữ liệu
     router.events.pipe(
       untilDestroyed(this),
-      filter(event => event instanceof NavigationEnd )
-    ).subscribe(data => {
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(listSearch => {
       this.key = this.activatedRoute.snapshot.paramMap.get('key');
       this.loadData();
     })
@@ -36,7 +38,6 @@ export class ResultSearchComponent {
   }
 
   async loadData() {
-    const data = await this.service.getListMovie();
-      this.preformSearch = data.filter((item: any) => item.original_title.toLowerCase().includes(this.key.toLowerCase()));
+    this.listSearch = await this.service.getSearchResultsListMovie(this.key);
   }
 }

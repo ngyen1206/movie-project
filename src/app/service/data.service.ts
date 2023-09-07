@@ -52,6 +52,7 @@ export class DataService {
       },
     };
     return await axios.request(options).then(function (response: { data: any; }) {
+      console.log(response.data.results);
       return response.data;
     }).catch(function (error) {
       console.error(error);
@@ -61,13 +62,16 @@ export class DataService {
   public async getSearchResultsListMovie($key: string) {
     const options = {
       method: 'GET',
-      url: `https://api.themoviedb.org/3/search/movie?query=${$key}`,
+      // url: `https://api.themoviedb.org/3/search/movie?query=${$key}`,
+      url: `https://api.themoviedb.org/3/search/movie?query=${$key}&include_adult=false&language=en-US&page=1`,
       headers: {
         accept: this.accept,
         Authorization: this.authorization
       },
     };
     return await axios.request(options).then(function (response: { data: any; }) {
+      console.log(response.data.results);
+      
       return response.data.results;
     }).catch(function (error) {
       console.error(error);

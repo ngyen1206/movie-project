@@ -2,7 +2,6 @@ import { Component, ElementRef, Input, Renderer2, ViewChild } from '@angular/cor
 import { Subject, debounceTime } from 'rxjs';
 import { DataService } from '../service/data.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { keyValuesToMap } from '@angular/flex-layout/extended/style/style-transforms';
 
 @Component({
   selector: 'app-search',
@@ -10,10 +9,6 @@ import { keyValuesToMap } from '@angular/flex-layout/extended/style/style-transf
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent {
- 
-  // public searchText: string = '';
-  // public listSearchResults: any = [];
-  // private searchSubject: Subject<string> = new Subject<string>();
 
   public searchTerm: string = '';
   public searchText = '';
@@ -26,26 +21,7 @@ export class SearchComponent {
 
   //test
   public kq: any;
-
-// constructor(){
-//   this.searchSubject.pipe(debounceTime(500)).subscribe(searchText => {
-//     this.performSearch();
-//   });
-// }
-
-//   //bat su kien nhap noi dung vao o tim kiem
-//   onInputChange(event: any) {
-//       this.searchText = event.currentTarget.value.trim().toLowerCase();
-//       this.searchSubject.next(event.currentTarget.value);
-//       console.log(this.searchText);
-      
-//     }
-// performSearch(){
-//   console.log("1");
-  
-// }
-
-
+  public id: any;
 
   @ViewChild('search') search?: ElementRef;
   @ViewChild('list') list?: ElementRef;
@@ -60,7 +36,7 @@ export class SearchComponent {
     ).subscribe(searchTerm => {
       this.performSearch();
     });
-
+console.log(this.searchTerm);
 
     this.renderer.listen('window', 'click', (event: Event) => {
       if (event.target != this.search?.nativeElement && event.target != this.list?.nativeElement) {
@@ -69,28 +45,32 @@ export class SearchComponent {
     });
   }
 
-  searchMovie() {
+  async searchMovie() {
+    const newLocal = this;
     this.listMovie = this.service.getSearchResultsListMovie(this.searchTerm);
-    console.log(this.searchTerm);
-    console.log(this.listMovie);
-
-
+    // console.log(this.searchTerm);
+    // // console.log(this.listMovie.backdrop_path);
+    // this.listMovie = await newLocal.service.getSearchResultsListMovie("The Last Voyage of the Demeter");
+    // console.log("aaaaa   " + this.listMovie[1].original_title);
   }
-  onInputChange(e: any) {
-    this.searchTerm = e.currentTarget.value.trim().toLowerCase();
-    this.searchSubject.next(e.currentTarget.value);
+
+  //bat su kien nhap noi dung vao o tim kiem
+  onInputChange(event: any) {
+    this.searchTerm = event.currentTarget.value.trim().toLowerCase();
+    this.searchSubject.next(event.currentTarget.value);
+   // console.log(this.searchTerm);
+
   }
   performSearch() {
-    const searchTerm = this.searchTerm;
-    if (!searchTerm) {
+    this.searchTerm = this.searchTerm;
+    if (!this.searchTerm) {
       this.loading = false;
     }
     else {
       this.loading = true;
       this.searchResults = this.listMovie.filter((item: any) =>
-        item.original_title.toLowerCase().includes(searchTerm)
+        item.original_title.toLowerCase().includes(this.searchTerm)
       );
-
       if (this.searchResults.length == 0) {
         this.loading = false;
       }
@@ -98,7 +78,10 @@ export class SearchComponent {
   }
   public async ngOnInit() {
     this.listMovie = await this.service.getSearchResultsListMovie(this.searchTerm);
-    console.log(this.listMovie);
+    // this.listMovie = await this.service.getSearchResultsListMovie("The Last Voyage of the Demeter");
+    // console.log("aaaaa   " + this.listMovie[1].original_title);
+    // console.log("aaa");
+
   }
 
   searchData() {

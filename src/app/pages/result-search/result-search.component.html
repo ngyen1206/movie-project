@@ -1,7 +1,7 @@
 <div class="container">
     <h2 class="_p-30">Key work: <span style="color: yellow;">{{key}}</span></h2>
-    <div class="row" *ngIf="preformSearch.length > 0 ;else More">
-        <ng-container *ngFor="let item of preformSearch">
+    <div class="row" *ngIf="listSearch.length > 0 ;else More">
+        <ng-container *ngFor="let item of listSearch">
             <div class="col-4">
                 <app-card-movie-small [id]="item['id']" [poster_path]="item['poster_path']"
                 [original_title]="item['original_title']" (click)="reloadPage()">
